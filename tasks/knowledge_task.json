@@ -1,0 +1,422 @@
+[
+  {
+    "section": "Section E: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 1,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 49 — KNOW1",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "If a website uses cookies, it means that the site…",
+    "response_options": {
+      "A": "Can see the content of all the files on the device you are using",
+      "B": "Is not a risk to infect your device with a computer virus",
+      "C": "Will automatically prompt you to update your web browser software if it is out of date",
+      "D": "Can track your visits and activity on the site"
+    }
+  },
+  {
+    "section": "Section E: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 2,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 49 — KNOW2",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "Which of the following is the largest source of revenue for most major social media platforms?",
+    "response_options": {
+      "A": "Exclusive licensing deals with internet service providers and cellphone manufacturers",
+      "B": "Allowing companies to purchase advertisements on their platforms",
+      "C": "Hosting conferences for social media influencers",
+      "D": "Providing consulting services to corporate clients"
+    }
+  },
+  {
+    "section": "Section E: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 3,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 49 — KNOW3",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "When a website has a privacy policy, it means that the site…",
+    "response_options": {
+      "A": "Has created a contract between itself and its users about how it will use their data",
+      "B": "Will not share its users' personal information with third parties",
+      "C": "Adheres to federal guidelines about deceptive advertising practices",
+      "D": "Does not retain any personally identifying information about its users"
+    }
+  },
+  {
+    "section": "Section E: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 4,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 49 — KNOW4",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What does it mean when a website has 'https://' at the beginning of its URL, as opposed to 'http://' without the 's'?",
+    "response_options": {
+      "A": "Information entered into the site is encrypted",
+      "B": "The content on the site is safe for children",
+      "C": "The site is only accessible to people in certain countries",
+      "D": "The site has been verified as trustworthy"
+    }
+  },
+  {
+    "section": "Section E: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 5,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 49 — KNOW5",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "Where might someone encounter a phishing scam?",
+    "response_options": {
+      "A": "In an email only",
+      "B": "On social media only",
+      "C": "In a text message only",
+      "D": "All of the above — email, social media, text messages, and websites"
+    }
+  },
+  {
+    "section": "Section E: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 6,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 49 — KNOW7",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "The term 'net neutrality' describes the principle that…",
+    "response_options": {
+      "A": "Internet service providers should treat all traffic on their networks equally",
+      "B": "Social media platforms must give equal visibility to conservative and liberal points of view",
+      "C": "Online advertisers cannot post ads for housing or jobs that are only visible to people of a certain race",
+      "D": "The government cannot censor online speech"
+    }
+  },
+  {
+    "section": "Section E: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 7,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 49 — KNOW8",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "If someone opens a webpage on their work computer using 'incognito mode' or 'private browsing', which of the following groups will NOT be able to see their online activities?",
+    "response_options": {
+      "A": "The group that runs their company's internal computer network",
+      "B": "Their company's internet service provider",
+      "C": "A coworker who uses the same computer",
+      "D": "The websites they visit while in private browsing mode"
+    }
+  },
+  {
+    "section": "Section E: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 8,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 49 — KNOW9",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "Some websites and online services use a security process known as two-step or two-factor authentication (2FA). Which of the following best describes an example of two-factor authentication?",
+    "response_options": {
+      "A": "Entering a username and password, then being prompted to enter a one-time code sent to your phone",
+      "B": "Completing a CAPTCHA challenge after entering your password",
+      "C": "Confirming a security image and keyword before entering your password",
+      "D": "Answering multiple security questions such as your mother's maiden name and favorite sport"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 9,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 127 — DKQ2",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "If a website uses cookies, it means that the site can…",
+    "response_options": {
+      "A": "Protect your computer from getting viruses",
+      "B": "Send you pop-up advertisements",
+      "C": "Look at files saved on your computer",
+      "D": "Track your visits and activity on the site"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 10,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 127 — DKQ3",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is a 'deepfake'?",
+    "response_options": {
+      "A": "A seemingly real, computer-generated image, video or audio of something that did not occur",
+      "B": "A text-based chatbot that tricks people into thinking that they are talking to another person",
+      "C": "A system that records and protects information online",
+      "D": "A program that makes it look like people are using the internet from a different location"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 11,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 127 — DKQ5",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "Which of the following passwords is the most secure?",
+    "response_options": {
+      "A": "SportsFan1983",
+      "B": "WTh!58iLf2?9zD",
+      "C": "abc12.6.48",
+      "D": "1234567890"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 12,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 127 — DKQ6",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "Which of the following establishes a secure and encrypted connection by routing a user's internet traffic through a remote server?",
+    "response_options": {
+      "A": "Firewall",
+      "B": "Blockchain",
+      "C": "Virtual personal network, or 'VPN'",
+      "D": "Antivirus software"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 13,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 127 — DKQ7",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "How do large language models, such as ChatGPT, come up with answers to questions users submit?",
+    "response_options": {
+      "A": "Randomly generate sentences that reorganize and reuse keywords found in the submitted question",
+      "B": "Search the internet and summarize what the top results say on that topic",
+      "C": "Create a response based on word patterns and relationships it previously learned from text pulled from the internet",
+      "D": "Use a pre-written response that plugs in keywords from the question without any understanding of what was being asked"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 14,
+    "construct": "Critical Knowledge",
+    "source": "Pew ATP Wave 127 — DKQ8",
+    "question_type": "[Single Choice — Image-based] Identify the correct example.",
+    "question": "Some websites and online services use a security process known as two-step or two-factor authentication. Which of the following images is an example of two-factor authentication?",
+    "response_options": {
+      "A": "A screen prompting user to enter a one-time code sent to their phone (2-step verification)",
+      "B": "A CAPTCHA asking the user to type distorted words",
+      "C": "A form asking security questions (e.g., childhood nickname, first manager's name)",
+      "D": "A reCAPTCHA grid asking the user to select images containing crosswalks"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 15,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV15",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is the best way to reduce the amount of data a mobile app can collect about you?",
+    "response_options": {
+      "A": "Grant every permission the app requests so it works better",
+      "B": "Review permissions and allow only what is necessary",
+      "C": "Turn on Bluetooth for all apps",
+      "D": "Share your contacts with the app developer"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 16,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV16",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is a password manager mainly used for?",
+    "response_options": {
+      "A": "To store and generate unique passwords securely",
+      "B": "To remove viruses from your computer",
+      "C": "To hide your browsing history from websites",
+      "D": "To speed up your internet connection"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 17,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV17",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is ransomware?",
+    "response_options": {
+      "A": "A tool that improves browser privacy settings",
+      "B": "Malware that locks or encrypts files and demands payment",
+      "C": "A type of secure messaging app",
+      "D": "A feature that blocks advertisements"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 18,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV18",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is a digital signature mainly used for?",
+    "response_options": {
+      "A": "To hide a file so only the owner can open it",
+      "B": "To verify who sent the data and that it was not changed",
+      "C": "To make a password easier to remember",
+      "D": "To compress files before sending them"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 19,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV19",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "Which setting is most useful for limiting location tracking by an app?",
+    "response_options": {
+      "A": "Allow location access only while using the app",
+      "B": "Give the app constant background access",
+      "C": "Share your exact location with everyone",
+      "D": "Keep location services on for all apps at all times"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 20,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV20",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is a data breach?",
+    "response_options": {
+      "A": "A scheduled backup of files",
+      "B": "Unauthorized access to or exposure of personal data",
+      "C": "A feature that encrypts messages",
+      "D": "A way to improve device performance"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 21,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV21",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is the best practice when using public Wi-Fi for sensitive activities?",
+    "response_options": {
+      "A": "Use a VPN or avoid sensitive logins on public networks",
+      "B": "Disable all security settings",
+      "C": "Share the Wi-Fi password with strangers",
+      "D": "Reuse the same password on every site"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 22,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV22",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What does end-to-end encryption mean?",
+    "response_options": {
+      "A": "Only the sender and the recipient can read the message content",
+      "B": "Anyone on the network can read the message content",
+      "C": "The message is stored without any protection",
+      "D": "The service provider can always read the message content"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 23,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV23",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "Which of the following is a common sign of a phishing email?",
+    "response_options": {
+      "A": "A normal sender address and no urgency",
+      "B": "A message that pressures you to act quickly and may contain a suspicious link",
+      "C": "A message you expected from a verified contact",
+      "D": "An email with no links and no attachments"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 24,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV24",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "Why should you install software and operating system updates promptly?",
+    "response_options": {
+      "A": "They usually make the device less secure",
+      "B": "They often fix known security vulnerabilities",
+      "C": "They remove the need for passwords",
+      "D": "They let websites collect more data"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 25,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV25",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is browser fingerprinting?",
+    "response_options": {
+      "A": "A method of identifying a browser or device using its settings and characteristics",
+      "B": "A way to delete all cookies from a browser",
+      "C": "A tool that encrypts all website traffic",
+      "D": "A feature that blocks pop-up ads"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 26,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV26",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What does clearing cookies in a browser mainly do?",
+    "response_options": {
+      "A": "It deletes tracking data and some site preferences stored by websites",
+      "B": "It upgrades your internet speed",
+      "C": "It permanently encrypts your device",
+      "D": "It installs antivirus protection"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 27,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV27",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is one benefit of multi-factor authentication?",
+    "response_options": {
+      "A": "It makes it easier for attackers to guess your password",
+      "B": "It adds an extra layer of protection beyond a password",
+      "C": "It removes the need to secure your account",
+      "D": "It lets anyone log in from any device without verification"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 28,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV28",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "Why should you use unique answers to security questions when possible?",
+    "response_options": {
+      "A": "So the answers are easier to guess",
+      "B": "To make account recovery harder to abuse",
+      "C": "To share them publicly",
+      "D": "To avoid needing a password"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 29,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV29",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is credential stuffing?",
+    "response_options": {
+      "A": "Guessing passwords by trying random characters on one account",
+      "B": "Using leaked usernames and passwords from one service to try logging into another",
+      "C": "Encrypting passwords before storing them",
+      "D": "Creating a password manager backup file"
+    }
+  },
+  {
+    "section": "Section B: Critical Knowledge — Privacy & Security Literacy",
+    "question_number": 30,
+    "construct": "Critical Knowledge",
+    "source": "Custom — PRIV30",
+    "question_type": "[Single Choice] Select the best answer.",
+    "question": "What is a zero-day vulnerability?",
+    "response_options": {
+      "A": "A flaw that has already been patched by the software vendor",
+      "B": "A vulnerability that is publicly known and immediately fixed by antivirus software",
+      "C": "A vulnerability that is not yet known to the vendor or has no available patch at the time it is exploited",
+      "D": "A security feature that blocks all malware"
+    }
+  }
+]

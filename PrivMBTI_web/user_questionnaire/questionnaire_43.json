@@ -1,0 +1,775 @@
+[
+    {
+        "task_number":  9,
+        "task instruction":  "Your task is to automatically generate a set of privacy configurations for a given app, according to the user\u0027s privacy traits described in the [PERSONA] section. ",
+        "task requirement":  "1. Select one option for each setting listed under \u0027Available Privacy Settings\u0027.\n2. Provide your choices as a coherent privacy configuration in the field `task_output`.\n3. In `decision_points`, briefly summarize 3-4 key persona-based reasoning factors that influenced your decisions.",
+        "app name":  "weibo",
+        "app description":  "Weibo is a public microblogging and social media platform where users post updates, follow others, comment, and join trending conversations.",
+        "app core features":  "1.Public Posting - Share posts, images, and opinions publicly or within selected visibility ranges.\n2.Social Networking - Follow accounts, receive comments, private messages, and social recommendations.\n3.Discovery and Reach - Participate in trending topics, local feeds, and broader public exposure.",
+        "available privacy settings":  [
+                                           {
+                                               "setting_num":  1,
+                                               "setting_name":  "One-tap Protection",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  2,
+                                               "setting_name":  "Disallow Others from Starting Flash Chats with Me",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  3,
+                                               "setting_name":  "Hide My Weibo Posts from Local Feed",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  4,
+                                               "setting_name":  "Do Not Recommend Address Book Friends to Me",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  5,
+                                               "setting_name":  "Do Not Allow This Phone Number to Find Me",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  6,
+                                               "setting_name":  "Allow Image Comments",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  7,
+                                               "setting_name":  "Who Can Comment on My Weibo Posts",
+                                               "setting_options":  [
+                                                                       "A.Everyone",
+                                                                       "B.People I Follow",
+                                                                       "C.My Followers"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  8,
+                                               "setting_name":  "Weibo Visibility Time Range",
+                                               "setting_options":  [
+                                                                       "A.All",
+                                                                       "B.Past Year",
+                                                                       "C.Past 3 Years",
+                                                                       "D.Past 6 Months",
+                                                                       "E.Custom"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  9,
+                                               "setting_name":  "Whose Direct Messages I Can Receive",
+                                               "setting_options":  [
+                                                                       "A.Default",
+                                                                       "B.People I Follow and My Followers",
+                                                                       "C.People I Follow",
+                                                                       "D.Mutual Friends"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  10,
+                                               "setting_name":  "Visibility of Liked Weibo Posts on My Homepage",
+                                               "setting_options":  [
+                                                                       "A.Everyone",
+                                                                       "B.My Followers",
+                                                                       "C.Only Me",
+                                                                       "D.Friends Circle"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  11,
+                                               "setting_name":  "Visibility of Commented Weibo Posts on My Homepage",
+                                               "setting_options":  [
+                                                                       "A.Everyone",
+                                                                       "B.My Followers",
+                                                                       "C.Only Me",
+                                                                       "D.Friends Circle"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  12,
+                                               "setting_name":  "Comment Firewall",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  13,
+                                               "setting_name":  "Personalized Ad Recommendations",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  14,
+                                               "setting_name":  "Personalized Content Recommendations",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           }
+                                       ],
+        "output format":  "Follow the structure required in the system content strictly.\nThe `task_output` must be a JSON list of objects in the format:\n[\n\t{\"setting_name\": \"string\", \"setting_option\": \"string\", \"reasoning\": \"string\"},\n\t{\"setting_name\": \"string\", \"setting_option\": \"string\", \"reasoning\": \"string\"},\n\t...\n]\n\nEach reasoning should briefly explain **why** this configuration matches the user\u0027s privacy traits. Do not output any text outside of the JSON object.",
+        "question":  "",
+        "source":  "setting"
+    },
+    {
+        "task_number":  5,
+        "task instruction":  "Your task is to automatically generate a set of privacy configurations for a given app, according to the user\u0027s privacy traits described in the [PERSONA] section. ",
+        "task requirement":  "1. Select one option for each setting listed under \u0027Available Privacy Settings\u0027.\n2. Provide your choices as a coherent privacy configuration in the field `task_output`.\n3. In `decision_points`, briefly summarize 3-4 key persona-based reasoning factors that influenced your decisions.",
+        "app name":  "netease cloud music",
+        "app description":  "NetEase Cloud Music is a music streaming and social listening platform with playlists, recommendations, profile pages, and fan community features.",
+        "app core features":  "1.Music Streaming - Listen to songs, albums, playlists, and radio content.\n2.Personalized Discovery - Receive music and content recommendations based on listening behavior.\n3.Social Music Features - Follow users, share activity, and display profile and fan-related information.",
+        "available privacy settings":  [
+                                           {
+                                               "setting_num":  1,
+                                               "setting_name":  "Profile Album",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  2,
+                                               "setting_name":  "Profile Bio",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  3,
+                                               "setting_name":  "Personalized Ad Recommendations",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  4,
+                                               "setting_name":  "Personalized Services",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  5,
+                                               "setting_name":  "Fan Group Label",
+                                               "setting_options":  [
+                                                                       "A.Show",
+                                                                       "B.Hidden"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  6,
+                                               "setting_name":  "Mutual Follows and Shared Listening",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  7,
+                                               "setting_name":  "Following and Followers List",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  8,
+                                               "setting_name":  "Show Recommended Activity in Following Feed",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  9,
+                                               "setting_name":  "Others Can See Artists I Follow",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  10,
+                                               "setting_name":  "Others Can Find Me via Phone Contacts",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  11,
+                                               "setting_name":  "Join Collaborative Playlists",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  12,
+                                               "setting_name":  "Show Online Status to Mutual Follows and Circle Friends",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  13,
+                                               "setting_name":  "Share My Note Playback Data with Authors",
+                                               "setting_options":  [
+                                                                       "A.Anonymous / Not Public",
+                                                                       "B.Public"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  14,
+                                               "setting_name":  "Show Shake-to-Open Splash Ads",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  15,
+                                               "setting_name":  "Show City Music Style Ranking Tags",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  16,
+                                               "setting_name":  "Show Local Popular Listening Tags",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  17,
+                                               "setting_name":  "Match Mode",
+                                               "setting_options":  [
+                                                                       "A.Show",
+                                                                       "B.Hidden"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  18,
+                                               "setting_name":  "Podcasts I Created",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  19,
+                                               "setting_name":  "Playlists I Created",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  20,
+                                               "setting_name":  "Music I Like",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  21,
+                                               "setting_name":  "Albums I Collected",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  22,
+                                               "setting_name":  "Podcasts I Collected",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  23,
+                                               "setting_name":  "Playlists I Collected",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  24,
+                                               "setting_name":  "My Listening Rankings",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  25,
+                                               "setting_name":  "My Region",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  26,
+                                               "setting_name":  "My Voice",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  27,
+                                               "setting_name":  "My University",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  28,
+                                               "setting_name":  "My Age",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  29,
+                                               "setting_name":  "My Badges",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  30,
+                                               "setting_name":  "My Gender",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  31,
+                                               "setting_name":  "My Years on the Platform",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  32,
+                                               "setting_name":  "My Status",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  33,
+                                               "setting_name":  "Search Visibility",
+                                               "setting_options":  [
+                                                                       "A.Show",
+                                                                       "B.Hidden"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  34,
+                                               "setting_name":  "Cloud Village ID",
+                                               "setting_options":  [
+                                                                       "A.Only Me",
+                                                                       "B.Everyone",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  35,
+                                               "setting_name":  "Social Accounts",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  36,
+                                               "setting_name":  "Direct Message Receiving Permission",
+                                               "setting_options":  [
+                                                                       "A.Everyone",
+                                                                       "B.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  37,
+                                               "setting_name":  "Who Can Send Me Direct Messages",
+                                               "setting_options":  [
+                                                                       "A.Everyone",
+                                                                       "B.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  38,
+                                               "setting_name":  "Music Tags",
+                                               "setting_options":  [
+                                                                       "A.Hidden",
+                                                                       "B.Only Me",
+                                                                       "C.Everyone",
+                                                                       "D.People I Follow"
+                                                                   ]
+                                           }
+                                       ],
+        "output format":  "Follow the structure required in the system content strictly.\nThe `task_output` must be a JSON list of objects in the format:\n[\n\t{\"setting_name\": \"string\", \"setting_option\": \"string\", \"reasoning\": \"string\"},\n\t{\"setting_name\": \"string\", \"setting_option\": \"string\", \"reasoning\": \"string\"},\n\t...\n]\n\nEach reasoning should briefly explain **why** this configuration matches the user\u0027s privacy traits. Do not output any text outside of the JSON object.",
+        "question":  "",
+        "source":  "setting"
+    },
+    {
+        "question_number":  11,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to purchase history to provide the \u0027product browsing and checkout\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  10,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to in-app search history to provide the \u0027music playback and playlist management\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  7,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to app interactions to provide the \u0027spoken language practice\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  8,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to other financial info (salary/debts) to provide the \u0027account balance and fund transfer\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  5,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to contacts to provide the \u0027making and receiving phone calls and managing call history\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  32,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to precise location to provide the \u0027automatic cloud photo backup\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  26,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to approximate location to provide the \u0027daily step counting\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  40,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to precise location to provide the \u0027real-time text and voice messaging\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  22,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to in-app search history to provide the \u0027searching nearby concerts and local events by location\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  3,
+        "construct":  "Privacy Concern",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I am concerned that websites may collect excessive personal information about me.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  20,
+        "construct":  "Actual Protective Behavior",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I decline or turn off cookies and other tracking mechanisms when using websites.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  16,
+        "construct":  "Trust \u0026 Label Efficacy",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I believe mobile phone manufacturers review or verify the information disclosed in app privacy labels.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  15,
+        "construct":  "Trust \u0026 Label Efficacy",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I believe the privacy labels shown in the App Store accurately reflect an app\u0027s data collection practices.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  27,
+        "construct":  "Regulatory Trust \u0026 Accountability",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I am skeptical that any action I take will make a meaningful difference in protecting my privacy.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  30,
+        "construct":  "Actual Protective Behavior",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "When you are asked to agree to a company’s privacy policy, I often read it before agreeing.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  13,
+        "construct":  "Behavioral Intention",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "When an app requests access to my location, contacts, or photos, I first understand why before deciding whether to grant permission.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  7,
+        "construct":  "Privacy Knowledge - Awareness",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I know what personal information websites collect about me.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  23,
+        "construct":  "Actual Protective Behavior",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I always use a passcode, fingerprint, or face recognition to lock my smartphone.",
+        "source":  "assessment"
+    },
+    {
+        "section":  "Section B: Critical Knowledge — Privacy \u0026 Security Literacy",
+        "question_number":  16,
+        "construct":  "Critical Knowledge",
+        "question_type":  "[Single Choice] Select the best answer based on your privacy persona.",
+        "response_options":  {
+                                 "A":  "To store and generate unique passwords securely",
+                                 "B":  "To remove viruses from your computer",
+                                 "C":  "To hide your browsing history from websites",
+                                 "D":  "To speed up your internet connection"
+                             },
+        "explanation":  "Password managers help users create and store strong, unique passwords for different accounts.",
+        "question":  "What is a password manager mainly used for?",
+        "source":  "knowledge"
+    },
+    {
+        "section":  "Section B: Critical Knowledge — Privacy \u0026 Security Literacy",
+        "question_number":  26,
+        "construct":  "Critical Knowledge",
+        "question_type":  "[Single Choice] Select the best answer based on your privacy persona.",
+        "response_options":  {
+                                 "A":  "It deletes tracking data and some site preferences stored by websites",
+                                 "B":  "It upgrades your internet speed",
+                                 "C":  "It permanently encrypts your device",
+                                 "D":  "It installs antivirus protection"
+                             },
+        "explanation":  "Clearing cookies removes small data files that websites use for tracking and remembering settings.",
+        "question":  "What does clearing cookies in a browser mainly do?",
+        "source":  "knowledge"
+    },
+    {
+        "section":  "Section E: Critical Knowledge — Privacy \u0026 Security Literacy",
+        "question_number":  3,
+        "construct":  "Critical Knowledge",
+        "question_type":  "[Single Choice] Select the best answer based on your privacy persona.",
+        "response_options":  {
+                                 "A":  "Has created a contract between itself and its users about how it will use their data",
+                                 "B":  "Will not share its users\u0027 personal information with third parties",
+                                 "C":  "Adheres to federal guidelines about deceptive advertising practices",
+                                 "D":  "Does not retain any personally identifying information about its users"
+                             },
+        "explanation":  "A privacy policy is a legal document outlining how a site collects, uses, and handles user data. It does not guarantee data protection or prohibition of third-party sharing.",
+        "question":  "When a website has a privacy policy, it means that the site…",
+        "source":  "knowledge"
+    }
+]

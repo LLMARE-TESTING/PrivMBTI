@@ -1,0 +1,433 @@
+[
+    {
+        "task_number":  6,
+        "task instruction":  "Your task is to automatically generate a set of privacy configurations for a given app, according to the user\u0027s privacy traits described in the [PERSONA] section. ",
+        "task requirement":  "1. Select one option for each setting listed under \u0027Available Privacy Settings\u0027.\n2. Provide your choices as a coherent privacy configuration in the field `task_output`.\n3. In `decision_points`, briefly summarize 3-4 key persona-based reasoning factors that influenced your decisions.",
+        "app name":  "zhihu",
+        "app description":  "Zhihu is a question-and-answer and content community platform where users read, write, follow topics, and interact around knowledge and opinions.",
+        "app core features":  "1.Knowledge Content - Browse answers, articles, and topic feeds.\n2.Interaction and Following - Follow users and topics, and engage through comments and likes.\n3.Personalized Experience - Receive tailored content and marketing communication settings.",
+        "available privacy settings":  [
+                                           {
+                                               "setting_num":  1,
+                                               "setting_name":  "One-tap Protection",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  2,
+                                               "setting_name":  "Follow Visibility Settings",
+                                               "setting_options":  [
+                                                                       "A.Public",
+                                                                       "B.Hide All",
+                                                                       "C.Hide Following Activity Only"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  3,
+                                               "setting_name":  "Disable Personalized Content Recommendations",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  4,
+                                               "setting_name":  "Disable Personalized Ad Recommendations",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  5,
+                                               "setting_name":  "My Following List and Following Activity",
+                                               "setting_options":  [
+                                                                       "A.Public",
+                                                                       "B.Hide All",
+                                                                       "C.Hide Following Activity Only"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  6,
+                                               "setting_name":  "Marketing SMS and Calls",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           }
+                                       ],
+        "output format":  "Follow the structure required in the system content strictly.\nThe `task_output` must be a JSON list of objects in the format:\n[\n\t{\"setting_name\": \"string\", \"setting_option\": \"string\", \"reasoning\": \"string\"},\n\t{\"setting_name\": \"string\", \"setting_option\": \"string\", \"reasoning\": \"string\"},\n\t...\n]\n\nEach reasoning should briefly explain **why** this configuration matches the user\u0027s privacy traits. Do not output any text outside of the JSON object.",
+        "question":  "",
+        "source":  "setting"
+    },
+    {
+        "task_number":  3,
+        "task instruction":  "Your task is to automatically generate a set of privacy configurations for a given app, according to the user\u0027s privacy traits described in the [PERSONA] section. ",
+        "task requirement":  "1. Select one option for each setting listed under \u0027Available Privacy Settings\u0027.\n2. Provide your choices as a coherent privacy configuration in the field `task_output`.\n3. In `decision_points`, briefly summarize 3-4 key persona-based reasoning factors that influenced your decisions.",
+        "app name":  "tieba",
+        "app description":  "Tieba is a topic-based online community where users join forums, post content, comment, and build interest-based social connections.",
+        "app core features":  "1.Topic Communities - Join and browse interest-based forums.\n2.Posting and Discussion - Publish posts, comments, and interact with other members.\n3.Social Messaging - Receive messages and maintain follower relationships inside the community.",
+        "available privacy settings":  [
+                                           {
+                                               "setting_num":  1,
+                                               "setting_name":  "One-tap Protection",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  2,
+                                               "setting_name":  "Following and Followers List",
+                                               "setting_options":  [
+                                                                       "A.Public",
+                                                                       "B.Only Me",
+                                                                       "C.Friends Only"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  3,
+                                               "setting_name":  "Followed Forums",
+                                               "setting_options":  [
+                                                                       "A.Public",
+                                                                       "B.Only Me",
+                                                                       "C.Friends Only"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  4,
+                                               "setting_name":  "Receive Messages from Friends",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  5,
+                                               "setting_name":  "Receive Messages from Strangers",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  6,
+                                               "setting_name":  "Who Can Comment on My Posts",
+                                               "setting_options":  [
+                                                                       "A.Everyone",
+                                                                       "B.My Followers",
+                                                                       "C.People I Follow"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  7,
+                                               "setting_name":  "Personalized Ad Recommendations",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           },
+                                           {
+                                               "setting_num":  8,
+                                               "setting_name":  "Personalized Content Recommendations",
+                                               "setting_options":  [
+                                                                       "A.On",
+                                                                       "B.Off"
+                                                                   ]
+                                           }
+                                       ],
+        "output format":  "Follow the structure required in the system content strictly.\nThe `task_output` must be a JSON list of objects in the format:\n[\n\t{\"setting_name\": \"string\", \"setting_option\": \"string\", \"reasoning\": \"string\"},\n\t{\"setting_name\": \"string\", \"setting_option\": \"string\", \"reasoning\": \"string\"},\n\t...\n]\n\nEach reasoning should briefly explain **why** this configuration matches the user\u0027s privacy traits. Do not output any text outside of the JSON object.",
+        "question":  "",
+        "source":  "setting"
+    },
+    {
+        "question_number":  5,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to contacts to provide the \u0027making and receiving phone calls and managing call history\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  18,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to microphone access to provide the \u0027photo capture with location tagging\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  44,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to device ID to provide the \u0027practice test and score tracking\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  17,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to health info (medical records/symptoms) to provide the \u0027workout logging and GPS route tracking\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  30,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to in-app search history to provide the \u0027personalized news feed\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  41,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to precise location to provide the \u0027making and receiving phone calls and managing call history\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  46,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to installed app information to provide the \u0027music playback and playlist management\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  26,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to approximate location to provide the \u0027daily step counting\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  48,
+        "question_type":  "[Single-choice] Evaluate the app\u0027s permission request in two steps: Step 1-Technical necessity check: Is this permission technically required for the stated feature to function at all? If yes, select 1 immediately regardless of your privacy preferences. Step 2 - Persona-based judgment (only if Step 1 = No): If the permission is NOT strictly necessary, evaluate based on your own privacy values and comfort level: select 1, 2, 3, 4 or 5 accordingly.",
+        "response_options":  {
+                                 "1":  "Strongly agree it is necessary and appropriate",
+                                 "2":  "Somewhat agree it is necessary and appropriate",
+                                 "3":  "Neutral / Unsure",
+                                 "4":  "Somewhat disagree — feels like an overreach",
+                                 "5":  "Strongly disagree — clearly an overreach"
+                             },
+        "question":  "The app requests access to precise location to provide the \u0027casual gameplay and score tracking\u0027 feature.\nAssuming I am using this feature, do you consider this data request necessary and appropriate?",
+        "source":  "contextual"
+    },
+    {
+        "question_number":  5,
+        "construct":  "Control / Autonomy",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I believe I should have the right to decide how my personal information is used.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  10,
+        "construct":  "Behavioral Intention",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "When downloading or using an app, I actively consider what information it might collect about me.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  15,
+        "construct":  "Trust \u0026 Label Efficacy",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I believe the privacy labels shown in the App Store accurately reflect an app\u0027s data collection practices.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  24,
+        "construct":  "Regulatory Trust \u0026 Accountability",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I trust that social media and app companies will not sell my personal data to third parties without my consent.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  25,
+        "construct":  "Regulatory Trust \u0026 Accountability",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I am concerned about how companies use the data they collect about me.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  28,
+        "construct":  "Regulatory Trust \u0026 Accountability",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I believe there should be stronger government regulation over what companies can do with users\u0027 personal information.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  20,
+        "construct":  "Actual Protective Behavior",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I decline or turn off cookies and other tracking mechanisms when using websites.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  8,
+        "construct":  "Privacy Knowledge - Awareness",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I understand how websites use the personal information I provide.",
+        "source":  "assessment"
+    },
+    {
+        "question_number":  22,
+        "construct":  "Actual Protective Behavior",
+        "question_type":  "[5-point Likert] Select the description that best describes you.",
+        "response_options":  {
+                                 "1":  "Strongly disagree",
+                                 "2":  "Disagree",
+                                 "3":  "Neutral / Neither disagree nor agree",
+                                 "4":  "Agree",
+                                 "5":  "Strongly agree"
+                             },
+        "question":  "I use a privacy-focused browser or search engine that does not track my online activity.",
+        "source":  "assessment"
+    },
+    {
+        "section":  "Section E: Critical Knowledge — Privacy \u0026 Security Literacy",
+        "question_number":  3,
+        "construct":  "Critical Knowledge",
+        "question_type":  "[Single Choice] Select the best answer based on your privacy persona.",
+        "response_options":  {
+                                 "A":  "Has created a contract between itself and its users about how it will use their data",
+                                 "B":  "Will not share its users\u0027 personal information with third parties",
+                                 "C":  "Adheres to federal guidelines about deceptive advertising practices",
+                                 "D":  "Does not retain any personally identifying information about its users"
+                             },
+        "explanation":  "A privacy policy is a legal document outlining how a site collects, uses, and handles user data. It does not guarantee data protection or prohibition of third-party sharing.",
+        "question":  "When a website has a privacy policy, it means that the site…",
+        "source":  "knowledge"
+    },
+    {
+        "section":  "Section B: Critical Knowledge — Privacy \u0026 Security Literacy",
+        "question_number":  10,
+        "construct":  "Critical Knowledge",
+        "question_type":  "[Single Choice] Select the best answer based on your privacy persona.",
+        "response_options":  {
+                                 "A":  "A seemingly real, computer-generated image, video or audio of something that did not occur",
+                                 "B":  "A text-based chatbot that tricks people into thinking that they are talking to another person",
+                                 "C":  "A system that records and protects information online",
+                                 "D":  "A program that makes it look like people are using the internet from a different location"
+                             },
+        "explanation":  "Deepfakes are synthetic media generated by generative adversarial networks (GANs) or diffusion models. They represent a critical threat vector for identity fraud, social engineering, and disinformation at scale.",
+        "question":  "What is a \u0027deepfake\u0027?",
+        "source":  "knowledge"
+    },
+    {
+        "section":  "Section E: Critical Knowledge — Privacy \u0026 Security Literacy",
+        "question_number":  5,
+        "construct":  "Critical Knowledge",
+        "question_type":  "[Single Choice] Select the best answer based on your privacy persona.",
+        "response_options":  {
+                                 "A":  "In an email only",
+                                 "B":  "On social media only",
+                                 "C":  "In a text message only",
+                                 "D":  "All of the above — email, social media, text messages, and websites"
+                             },
+        "explanation":  "Phishing attacks are multi-vector threats that can be delivered via email, SMS (smishing), social media, and malicious websites. Awareness of all channels is essential.",
+        "question":  "Where might someone encounter a phishing scam?",
+        "source":  "knowledge"
+    }
+]

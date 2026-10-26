@@ -1,0 +1,404 @@
+[
+    {
+        "question_number": 1,
+        "construct": "Privacy Concern",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I consider privacy to be very important, so I am very cautious when providing personal information on websites.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 2,
+        "construct": "Privacy Concern",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "Websites should only collect the minimum personal information necessary to provide their services.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 3,
+        "construct": "Privacy Concern",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I am concerned that websites may collect excessive personal information about me.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 4,
+        "construct": "Control / Autonomy",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I believe I should have the right to decide which personal information is collected about me.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 5,
+        "construct": "Control / Autonomy",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I believe I should have the right to decide how my personal information is used.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 6,
+        "construct": "Control / Autonomy",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I believe I should have the right to control how my personal information is disclosed to others.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 7,
+        "construct": "Privacy Knowledge - Awareness",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I know what personal information websites collect about me.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 8,
+        "construct": "Privacy Knowledge - Awareness",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I understand how websites use the personal information I provide.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 9,
+        "construct": "Privacy Knowledge - Awareness",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I know which other organizations or companies a website shares my personal information with.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 10,
+        "construct": "Behavioral Intention",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "When downloading or using an app, I actively consider what information it might collect about me.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 11,
+        "construct": "Behavioral Intention",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I know where to find information about the data apps collect or share (e.g., App Store privacy labels or privacy policies).",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 12,
+        "construct": "Behavioral Intention",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "Privacy concerns affect my decision to download or continue using an app.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 13,
+        "construct": "Behavioral Intention",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "When an app requests access to my location, contacts, or photos, I first understand why before deciding whether to grant permission.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 14,
+        "construct": "Behavioral Intention",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "When I am unsure about an app's data use, I actively look for answers (e.g., search for information or read the terms).",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 15,
+        "construct": "Trust & Label Efficacy",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I believe the privacy labels shown in the App Store accurately reflect an app's data collection practices.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 16,
+        "construct": "Trust & Label Efficacy",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I believe mobile phone manufacturers review or verify the information disclosed in app privacy labels.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 17,
+        "construct": "Trust & Label Efficacy",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I feel these privacy labels help me better manage and control my personal data.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 18,
+        "construct": "Trust & Label Efficacy",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "If privacy labels let me directly turn off a category of data collection, I would actively use those controls.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 19,
+        "construct": "Regulatory Trust & Accountability",
+        "source": "Adapted from Pew ATP W127: DIGHABT1",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I am comfortable with companies sharing my personal data with outside groups doing research that might help improve society",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 20,
+        "construct": "Actual Protective Behavior",
+        "source": "Adapted from Pew ATP W127: DIGHABT2a",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I decline or turn off cookies and other tracking mechanisms when using websites.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 21,
+        "construct": "Actual Protective Behavior",
+        "source": "Adapted from Pew ATP W127: DIGHABT2c",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I use messaging apps or services that offer end-to-end encryption for my private communications.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 22,
+        "construct": "Actual Protective Behavior",
+        "source": "Adapted from Pew ATP W127: DIGHABT2d",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I use a privacy-focused browser or search engine that does not track my online activity.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 23,
+        "construct": "Actual Protective Behavior",
+        "source": "Adapted from Pew ATP W127: SPACCESS",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I always use a passcode, fingerprint, or face recognition to lock my smartphone.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 24,
+        "construct": "Regulatory Trust & Accountability",
+        "source": "Adapted from Pew ATP W127: SMLEAD-c",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I trust that social media and app companies will not sell my personal data to third parties without my consent.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 25,
+        "construct": "Regulatory Trust & Accountability",
+        "source": "Adapted from Pew ATP W127: CONCERNCO",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I am concerned about how companies use the data they collect about me.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 26,
+        "construct": "Regulatory Trust & Accountability",
+        "source": "Adapted from Pew ATP W127: CONTROLCO",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I feel I have meaningful control over the data that companies collect about me.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 27,
+        "construct": "Regulatory Trust & Accountability",
+        "source": "Adapted from Pew ATP W127: PRIVFEEL-b",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I am skeptical that any action I take will make a meaningful difference in protecting my privacy.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 28,
+        "construct": "Regulatory Trust & Accountability",
+        "source": "Adapted from Pew ATP W127: GOVREGV1",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I believe there should be stronger government regulation over what companies can do with users' personal information.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 29,
+        "construct": "Regulatory Trust & Accountability",
+        "source": "Adapted from Pew ATP W127: GOVREGV1",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "I am confident that companies will follow what their privacy policies say they will do with my personal information?",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    },
+    {
+        "question_number": 30,
+        "construct": "Actual Protective Behavior",
+        "source": "Adapted from Pew ATP W127: GOVREGV1",
+        "question_type": "[5-point Likert] Select the description that best describes you.",
+        "question": "When you are asked to agree to a company’s privacy policy, I often read it before agreeing.",
+        "response_options": {
+            "1": "Strongly disagree",
+            "2": "Disagree",
+            "3": "Neutral / Neither disagree nor agree",
+            "4": "Agree",
+            "5": "Strongly agree"
+        }
+    }
+]

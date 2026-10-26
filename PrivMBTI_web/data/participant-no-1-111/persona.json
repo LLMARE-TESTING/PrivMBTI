@@ -1,0 +1,53 @@
+{
+  "persona_traits": {
+    "five_person_traits": {
+      "openness": "low",
+      "conscientiousness": "low",
+      "extraversion": "high",
+      "agreeableness": "low",
+      "neuroticism": "low"
+    },
+    "attitudes_and_perceptions": {
+      "privacy_concern": "low",
+      "data_concerns": "moderate",
+      "online_trust": "low",
+      "home_network_trust": "moderate",
+      "threat_source": "primarily internal",
+      "view_of_others_awareness": "lower than mine",
+      "privacy_protection_actions": "no need",
+      "security_vs_convenience": "prioritize security",
+      "social_vs_privacy": "prioritize social",
+      "attitudes_toward_being_monitored": "unconcerned",
+      "data_collecting_entity_trust": "moderate"
+    },
+    "knowledge_and_learning": {
+      "knowledge_of_security_privacy_concepts": "low",
+      "sources_of_security_knowledge": [
+        "Tech news",
+        "Security blogs"
+      ],
+      "types_of_perceived_threats": [
+        "Others"
+      ]
+    },
+    "behaviors_and_practices": {
+      "daily_online_hours": "1-3",
+      "completeness_of_fallback_authentication": "high",
+      "ability_to_help_others": "high",
+      "behavior_changes": "some",
+      "initiative_on_reviewing_policies": null,
+      "proactive_or_reactive": "neutral",
+      "number_of_passwords": ">6",
+      "tendency_to_censor_information": "low",
+      "social_networking_use": "high",
+      "system_protection": [
+        "Firewall"
+      ],
+      "tendency_to_adjust_website_settings": "low",
+      "password_layer": "strong",
+      "recording_passwords": "recorded securely"
+    }
+  },
+  "persona_code": "DSUL",
+  "persona_id": "3d3ebd04ce479eed8f9ad9ecee2804f43919870065a2a8a3c1216852b73969d7"
+}

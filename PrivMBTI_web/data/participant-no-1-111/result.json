@@ -1,0 +1,468 @@
+{
+  "savedAt": "2026-10-26T18:02:10.990+08:00",
+  "sessionId": "privacy-mbti-1793008929189-5s7io4jo",
+  "participant": {
+    "number": 1,
+    "name": "111"
+  },
+  "startedAt": "2026-10-26T18:01:48.389+08:00",
+  "completedAt": "2026-10-26T18:02:09.189+08:00",
+  "totalMs": 20800,
+  "result": {
+    "code": "DSUL",
+    "scores": {
+      "V": 0.36538461538461536,
+      "C": 0.42105263157894735,
+      "U": 0.39814814814814814,
+      "L": 0.4090909090909091
+    }
+  },
+  "personaTraits": {
+    "five_person_traits": {
+      "openness": "low",
+      "conscientiousness": "low",
+      "extraversion": "high",
+      "agreeableness": "low",
+      "neuroticism": "low"
+    },
+    "attitudes_and_perceptions": {
+      "privacy_concern": "low",
+      "data_concerns": "moderate",
+      "online_trust": "low",
+      "home_network_trust": "moderate",
+      "threat_source": "low",
+      "view_of_others_awareness": "low",
+      "privacy_protection_actions": "low",
+      "security_vs_convenience": "high",
+      "social_vs_privacy": "low",
+      "attitudes_toward_being_monitored": "low",
+      "data_collecting_entity_trust": "moderate"
+    },
+    "knowledge_and_learning": {
+      "knowledge_of_security_privacy_concepts": "low",
+      "sources_of_security_knowledge": [
+        "Tech news",
+        "Security blogs"
+      ],
+      "types_of_perceived_threats": [
+        "Others"
+      ]
+    },
+    "behaviors_and_practices": {
+      "daily_online_hours": "1-3",
+      "completeness_of_fallback_authentication": "high",
+      "ability_to_help_others": "high",
+      "behavior_changes": "moderate",
+      "initiative_on_reviewing_policies": null,
+      "proactive_or_reactive": "moderate",
+      "number_of_passwords": ">6",
+      "tendency_to_censor_information": "low",
+      "social_networking_use": "high",
+      "system_protection": [
+        "Firewall"
+      ],
+      "tendency_to_adjust_website_settings": "low",
+      "password_layer": "strong",
+      "recording_passwords": "recorded securely"
+    }
+  },
+  "questionnaire": null,
+  "feedback": null,
+  "attentionChecks": null,
+  "answers": {
+    "startedAt": "2026-10-26T18:01:48.389+08:00",
+    "completedAt": "2026-10-26T18:02:09.189+08:00",
+    "totalMs": 20800,
+    "items": [
+      {
+        "questionNumber": 1,
+        "questionId": 1,
+        "section": "five_person_traits",
+        "trait": "openness",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:50.823+08:00",
+        "elapsedMs": 2434
+      },
+      {
+        "questionNumber": 2,
+        "questionId": 2,
+        "section": "five_person_traits",
+        "trait": "conscientiousness",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:51.422+08:00",
+        "elapsedMs": 3033
+      },
+      {
+        "questionNumber": 3,
+        "questionId": 3,
+        "section": "five_person_traits",
+        "trait": "agreeableness",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:51.824+08:00",
+        "elapsedMs": 3435
+      },
+      {
+        "questionNumber": 4,
+        "questionId": 4,
+        "section": "five_person_traits",
+        "trait": "neuroticism",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:52.189+08:00",
+        "elapsedMs": 3800
+      },
+      {
+        "questionNumber": 5,
+        "questionId": 5,
+        "section": "attitudes_and_perceptions",
+        "trait": "privacy_concern",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:52.556+08:00",
+        "elapsedMs": 4167
+      },
+      {
+        "questionNumber": 6,
+        "questionId": 6,
+        "section": "attitudes_and_perceptions",
+        "trait": "data_collecting_entity_trust",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:52.890+08:00",
+        "elapsedMs": 4501
+      },
+      {
+        "questionNumber": 7,
+        "questionId": 7,
+        "section": "attitudes_and_perceptions",
+        "trait": "data_concerns",
+        "type": "likert5",
+        "rawAnswer": 2,
+        "answerValue": "neutral",
+        "answeredAt": "2026-10-26T18:01:53.374+08:00",
+        "elapsedMs": 4985
+      },
+      {
+        "questionNumber": 8,
+        "questionId": 8,
+        "section": "attitudes_and_perceptions",
+        "trait": "attitudes_toward_being_monitored",
+        "type": "likert5",
+        "answerValue": "",
+        "answeredAt": null,
+        "elapsedMs": null
+      },
+      {
+        "questionNumber": 9,
+        "questionId": 9,
+        "section": "attitudes_and_perceptions",
+        "trait": "home_network_trust",
+        "type": "likert5",
+        "rawAnswer": 2,
+        "answerValue": "neutral",
+        "answeredAt": "2026-10-26T18:01:53.906+08:00",
+        "elapsedMs": 5517
+      },
+      {
+        "questionNumber": 10,
+        "questionId": 10,
+        "section": "attitudes_and_perceptions",
+        "trait": "privacy_protection_actions",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:54.306+08:00",
+        "elapsedMs": 5917
+      },
+      {
+        "questionNumber": 11,
+        "questionId": 11,
+        "section": "behaviors_and_practices",
+        "trait": "tendency_to_adjust_website_settings",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:54.639+08:00",
+        "elapsedMs": 6250
+      },
+      {
+        "questionNumber": 12,
+        "questionId": 12,
+        "section": "behaviors_and_practices",
+        "trait": "behavior_changes",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:54.991+08:00",
+        "elapsedMs": 6602
+      },
+      {
+        "questionNumber": 13,
+        "questionId": 13,
+        "section": "behaviors_and_practices",
+        "trait": "initiative_on_reviewing_policies",
+        "type": "likert5",
+        "answerValue": "",
+        "answeredAt": null,
+        "elapsedMs": null
+      },
+      {
+        "questionNumber": 14,
+        "questionId": 14,
+        "section": "behaviors_and_practices",
+        "trait": "proactive_or_reactive",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:55.506+08:00",
+        "elapsedMs": 7117
+      },
+      {
+        "questionNumber": 15,
+        "questionId": 15,
+        "section": "attitudes_and_perceptions",
+        "trait": "security_vs_convenience",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:55.839+08:00",
+        "elapsedMs": 7450
+      },
+      {
+        "questionNumber": 16,
+        "questionId": 16,
+        "section": "attitudes_and_perceptions",
+        "trait": "threat_source",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:56.389+08:00",
+        "elapsedMs": 8000
+      },
+      {
+        "questionNumber": 17,
+        "questionId": 17,
+        "section": "attitudes_and_perceptions",
+        "trait": "view_of_others_awareness",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:56.741+08:00",
+        "elapsedMs": 8352
+      },
+      {
+        "questionNumber": 18,
+        "questionId": 18,
+        "section": "behaviors_and_practices",
+        "trait": "ability_to_help_others",
+        "type": "likert5",
+        "answerValue": "",
+        "answeredAt": null,
+        "elapsedMs": null
+      },
+      {
+        "questionNumber": 19,
+        "questionId": 19,
+        "section": "behaviors_and_practices",
+        "trait": "tendency_to_censor_information",
+        "type": "likert5",
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T18:01:57.222+08:00",
+        "elapsedMs": 8833
+      },
+      {
+        "questionNumber": 20,
+        "questionId": 20,
+        "section": "behaviors_and_practices",
+        "trait": "password_layer",
+        "type": "scale3",
+        "rawAnswer": 2,
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T18:01:57.556+08:00",
+        "elapsedMs": 9167
+      },
+      {
+        "questionNumber": 21,
+        "questionId": 21,
+        "section": "behaviors_and_practices",
+        "trait": "daily_online_hours",
+        "type": "scale3",
+        "rawAnswer": 1,
+        "answerValue": "1",
+        "answeredAt": "2026-10-26T18:01:58.356+08:00",
+        "elapsedMs": 9967
+      },
+      {
+        "questionNumber": 22,
+        "questionId": 22,
+        "section": "behaviors_and_practices",
+        "trait": "social_networking_use",
+        "type": "scale3",
+        "rawAnswer": 2,
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T18:01:58.722+08:00",
+        "elapsedMs": 10333
+      },
+      {
+        "questionNumber": 23,
+        "questionId": 23,
+        "section": "knowledge_and_learning",
+        "trait": "knowledge_of_security_privacy_concepts",
+        "type": "knowledge",
+        "rawAnswer": 2,
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T18:01:59.089+08:00",
+        "elapsedMs": 10700
+      },
+      {
+        "questionNumber": 24,
+        "questionId": 24,
+        "section": "knowledge_and_learning",
+        "trait": "knowledge_of_security_privacy_concepts",
+        "type": "knowledge",
+        "rawAnswer": 3,
+        "answerValue": "3",
+        "answeredAt": "2026-10-26T18:01:59.439+08:00",
+        "elapsedMs": 11050
+      },
+      {
+        "questionNumber": 25,
+        "questionId": 25,
+        "section": "knowledge_and_learning",
+        "trait": "knowledge_of_security_privacy_concepts",
+        "type": "knowledge",
+        "rawAnswer": 3,
+        "answerValue": "3",
+        "answeredAt": "2026-10-26T18:01:59.805+08:00",
+        "elapsedMs": 11416
+      },
+      {
+        "questionNumber": 26,
+        "questionId": 26,
+        "section": "knowledge_and_learning",
+        "trait": "knowledge_of_security_privacy_concepts",
+        "type": "knowledge",
+        "rawAnswer": 3,
+        "answerValue": "3",
+        "answeredAt": "2026-10-26T18:02:00.139+08:00",
+        "elapsedMs": 11750
+      },
+      {
+        "questionNumber": 27,
+        "questionId": 27,
+        "section": "knowledge_and_learning",
+        "trait": "knowledge_of_security_privacy_concepts",
+        "type": "knowledge",
+        "rawAnswer": 2,
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T18:02:00.489+08:00",
+        "elapsedMs": 12100
+      },
+      {
+        "questionNumber": 28,
+        "questionId": 28,
+        "section": "knowledge_and_learning",
+        "trait": "knowledge_of_security_privacy_concepts",
+        "type": "knowledge",
+        "rawAnswer": 3,
+        "answerValue": "3",
+        "answeredAt": "2026-10-26T18:02:00.839+08:00",
+        "elapsedMs": 12450
+      },
+      {
+        "questionNumber": 29,
+        "questionId": 29,
+        "section": "knowledge_and_learning",
+        "trait": "knowledge_of_security_privacy_concepts",
+        "type": "knowledge",
+        "rawAnswer": 2,
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T18:02:01.223+08:00",
+        "elapsedMs": 12834
+      },
+      {
+        "questionNumber": 30,
+        "questionId": 30,
+        "section": "knowledge_and_learning",
+        "trait": "sources_of_security_knowledge",
+        "type": "multi",
+        "rawAnswer": [
+          2,
+          5
+        ],
+        "answerValue": "2;5",
+        "answeredAt": "2026-10-26T18:02:03.359+08:00",
+        "elapsedMs": 14970
+      },
+      {
+        "questionNumber": 31,
+        "questionId": 31,
+        "section": "knowledge_and_learning",
+        "trait": "types_of_perceived_threats",
+        "type": "multi",
+        "rawAnswer": [
+          4
+        ],
+        "answerValue": "4",
+        "answeredAt": "2026-10-26T18:02:04.709+08:00",
+        "elapsedMs": 16320
+      },
+      {
+        "questionNumber": 32,
+        "questionId": 32,
+        "section": "behaviors_and_practices",
+        "trait": "system_protection",
+        "type": "multi",
+        "rawAnswer": [
+          4
+        ],
+        "answerValue": "4",
+        "answeredAt": "2026-10-26T18:02:06.494+08:00",
+        "elapsedMs": 18105
+      },
+      {
+        "questionNumber": 33,
+        "questionId": 33,
+        "section": "behaviors_and_practices",
+        "trait": "completeness_of_fallback_authentication",
+        "type": "scale3",
+        "rawAnswer": 2,
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T18:02:07.575+08:00",
+        "elapsedMs": 19186
+      },
+      {
+        "questionNumber": 34,
+        "questionId": 34,
+        "section": "behaviors_and_practices",
+        "trait": "number_of_passwords",
+        "type": "scale3",
+        "rawAnswer": 2,
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T18:02:08.632+08:00",
+        "elapsedMs": 20243
+      },
+      {
+        "questionNumber": 35,
+        "questionId": 35,
+        "section": "behaviors_and_practices",
+        "trait": "recording_passwords",
+        "type": "scale3",
+        "rawAnswer": 2,
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T18:02:09.189+08:00",
+        "elapsedMs": 20800
+      }
+    ]
+  }
+}

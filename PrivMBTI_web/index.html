@@ -1,0 +1,2733 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/Jin%20Ran/Downloads/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy MBTI — Discover Your Privacy Personality</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+:root {
+  --bg: #0e0e10;
+  --surface: #17171a;
+  --surface2: #1f1f23;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.13);
+  --text: #f0ede8;
+  --muted: #7a7872;
+  --accent: #c8b89a;
+  --accent2: #8b7355;
+  --selected: #2a2620;
+  --selected-border: #c8b89a;
+  --dim-v: #e8c4a0;
+  --dim-c: #a8d4b8;
+  --dim-u: #f0d090;
+  --dim-l: #a8c4e8;
+  --progress-h: 3px;
+  --r: 10px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+.screen { display: none; min-height: 100vh; }
+.screen.active { display: flex; flex-direction: column; }
+
+/* ─── INTRO ─── */
+#screen-intro {
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.intro-glow {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(200,184,154,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.intro-inner { max-width: 560px; }
+
+.intro-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.2s forwards;
+}
+
+.intro-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2.8rem, 7.5vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.4s forwards;
+}
+
+.intro-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.intro-subtitle {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.6s forwards;
+}
+
+.dims-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.8s forwards;
+}
+
+.mode-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 1.0s forwards;
+}
+
+.mode-btn {
+  background: var(--surface);
+  border: 0.5px solid var(--border2);
+  border-radius: var(--r);
+  padding: 14px 16px;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s, border-color 0.15s;
+  text-align: center;
+}
+.mode-btn:hover {
+  background: var(--surface2);
+  border-color: rgba(200,184,154,0.35);
+  transform: translateY(-1px);
+}
+.mode-btn.selected {
+  background: var(--selected);
+  border-color: var(--selected-border);
+}
+
+.mode-btn-title {
+  display: block;
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  margin-bottom: 0.3rem;
+}
+
+.mode-btn-subtitle {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.mode-btn.selected .mode-btn-subtitle {
+  color: var(--accent);
+}
+
+.dim-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 0.5px solid;
+  letter-spacing: 0.05em;
+}
+.dim-badge.v { color: var(--dim-v); border-color: rgba(232,196,160,0.3); background: rgba(232,196,160,0.06); }
+.dim-badge.c { color: var(--dim-c); border-color: rgba(168,212,184,0.3); background: rgba(168,212,184,0.06); }
+.dim-badge.u { color: var(--dim-u); border-color: rgba(240,208,144,0.3); background: rgba(240,208,144,0.06); }
+.dim-badge.l { color: var(--dim-l); border-color: rgba(168,196,232,0.3); background: rgba(168,196,232,0.06); }
+
+.btn-primary {
+  background: var(--accent);
+  color: #1a1610;
+  border: none;
+  padding: 14px 40px;
+  border-radius: var(--r);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+  opacity: 0;
+  animation: fadeUp 0.6s 1.0s forwards;
+}
+.btn-primary:hover { background: #d9cbb0; transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+.participant-form {
+  display: grid;
+  gap: 12px;
+  margin: 0 auto 2rem;
+  max-width: 420px;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.8s forwards;
+}
+
+.form-field {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+}
+
+.form-field label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.form-field input {
+  width: 100%;
+  background: var(--surface);
+  border: 0.5px solid var(--border2);
+  border-radius: var(--r);
+  color: var(--text);
+  font: inherit;
+  padding: 12px 14px;
+  outline: none;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--selected-border);
+  background: var(--surface2);
+}
+
+.form-error {
+  min-height: 1.4em;
+  color: #e8a0a0;
+  font-size: 0.9rem;
+}
+
+.intro-meta {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  opacity: 0;
+  animation: fadeUp 0.6s 1.1s forwards;
+}
+
+.intro-consent {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text);
+  text-align: left;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  animation: fadeUp 0.6s 1.3s forwards;
+}
+
+/* ─── QUIZ ─── */
+#screen-quiz {
+  padding: 0;
+}
+
+.quiz-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 0.5px solid var(--border);
+  padding: 16px 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quiz-logo {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.progress-wrap {
+  flex: 1;
+  position: relative;
+}
+
+.progress-track {
+  height: var(--progress-h);
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.quiz-body {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 2rem 5rem;
+}
+
+.question-card {
+  width: 100%;
+  max-width: 680px;
+  animation: fadeUp 0.35s ease forwards;
+}
+
+.q-phase {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.q-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.q-text {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
+
+.q-context {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+
+.q-section-label {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 12px;
+  padding: 3px 9px;
+  border: 0.5px solid rgba(200,184,154,0.28);
+  border-radius: 999px;
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.settings-list {
+  display: grid;
+  gap: 14px;
+}
+
+.setting-block {
+  padding: 14px;
+  border: 0.5px solid var(--border);
+  border-radius: var(--r);
+  background: rgba(255,255,255,0.02);
+}
+
+.setting-title {
+  margin-bottom: 10px;
+  color: rgba(240,237,232,0.9);
+  font-weight: 600;
+}
+
+.options-list { display: flex; flex-direction: column; gap: 10px; }
+
+.option-btn {
+  background: var(--surface);
+  border: 0.5px solid var(--border2);
+  border-radius: var(--r);
+  padding: 14px 18px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.4;
+}
+.option-btn:hover { background: var(--surface2); border-color: var(--border2); transform: translateX(3px); }
+.option-btn.selected {
+  background: var(--selected);
+  border-color: var(--selected-border);
+  color: var(--accent);
+}
+
+.option-key {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--muted);
+  min-width: 18px;
+  flex-shrink: 0;
+}
+.option-btn.selected .option-key { color: var(--accent2); }
+
+/* multi-select checkbox */
+.option-btn.multi { position: relative; }
+.option-check {
+  width: 16px; height: 16px;
+  border: 0.5px solid var(--border2);
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.15s;
+}
+.option-btn.selected .option-check {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a1610;
+}
+
+.quiz-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, var(--bg) 40%);
+  padding: 2rem 2rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.btn-nav {
+  padding: 12px 28px;
+  border-radius: var(--r);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 0.5px solid var(--border2);
+}
+.btn-back { background: transparent; color: var(--muted); }
+.btn-back:hover { color: var(--text); border-color: var(--border2); }
+.btn-next { background: var(--accent); color: #1a1610; border-color: var(--accent); font-weight: 500; }
+.btn-next:hover { background: #d9cbb0; }
+.btn-next:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* knowledge correct indicator */
+.knowledge-feedback {
+  display: none;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: var(--r);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.knowledge-feedback.correct { background: rgba(168,212,184,0.1); border: 0.5px solid rgba(168,212,184,0.3); color: #a8d4b8; }
+.knowledge-feedback.wrong { background: rgba(240,144,144,0.08); border: 0.5px solid rgba(240,144,144,0.25); color: #f09090; }
+
+/* ─── LOADING ─── */
+#screen-loading {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.loading-orb {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  border: 1px solid var(--accent2);
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.5rem;
+  color: var(--muted);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ─── RESULT ─── */
+#screen-result {
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3rem 2rem 4rem;
+}
+
+.result-inner { max-width: 700px; width: 100%; margin: 0 auto; }
+
+.result-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.1s forwards;
+}
+
+.result-animal {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.2s forwards;
+}
+
+.result-code {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.3s forwards;
+}
+
+.result-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.4s forwards;
+}
+
+.result-subtitle {
+  font-size: 1.1rem;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.5s forwards;
+}
+
+.result-desc {
+  font-size: 1rem;
+  color: rgba(240,237,232,0.75);
+  line-height: 1.75;
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.6s forwards;
+}
+
+.result-code,
+.persona-analysis-kicker,
+.dim-bar-label,
+.dim-bar-value {
+  color: #fff;
+}
+
+.result-code {
+  color: #fff;
+}
+
+.result-tags .result-tag {
+  font-size: 0.9rem;
+}
+
+.persona-analysis {
+  --persona-accent: #b8c9ff;
+  --persona-accent-soft: #d6c2ff;
+  margin: 0 0 3rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.65s forwards;
+}
+
+.persona-analysis-header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 1.25rem;
+}
+
+.persona-analysis-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  color: #d6c2ff;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.persona-analysis-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: 0.45rem;
+}
+
+.persona-analysis-subtitle {
+  font-size: 0.95rem;
+  color: rgba(240,237,232,0.72);
+  line-height: 1.65;
+}
+
+.persona-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.persona-analysis-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 0.5px solid var(--border);
+  border-radius: calc(var(--r) + 2px);
+  padding: 1rem 1.1rem 1.05rem;
+  min-height: 100%;
+}
+
+.persona-analysis-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: #bfd2ff;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.persona-analysis-lead {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: rgba(240,237,232,0.92);
+  margin-bottom: 0.85rem;
+}
+
+.persona-analysis-list {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.persona-analysis-list li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(240,237,232,0.76);
+}
+
+.persona-analysis-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--persona-accent-soft);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--persona-accent-soft) 18%, transparent);
+}
+
+.persona-analysis-summary {
+  margin-top: 12px;
+  padding: 1rem 1.1rem;
+  border-radius: var(--r);
+  border: 0.5px solid color-mix(in srgb, var(--persona-accent-soft) 26%, var(--border));
+  background: color-mix(in srgb, var(--persona-accent-soft) 8%, var(--surface));
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(240,237,232,0.84);
+}
+
+.dim-bars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.7s forwards;
+}
+
+.dim-bar-card {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--r);
+  padding: 1rem 1.25rem;
+}
+
+.dim-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.dim-bar-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: rgba(240,237,232,0.58);
+}
+
+.dim-bar-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.dim-bar-track {
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.dim-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0%;
+}
+
+.dim-bar-ends {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.result-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.8s forwards;
+}
+
+.result-tag {
+  font-size: 0.9rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 0.5px solid;
+}
+
+.btn-retry {
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  border: 0.5px solid var(--border2);
+  color: var(--muted);
+  padding: 12px 32px;
+  border-radius: var(--r);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.9s forwards;
+}
+.btn-retry:hover { color: var(--text); border-color: var(--border2); }
+
+/* ─── NEXT-STEP NOTICE (top of result page) ─── */
+.next-step-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, rgba(200,184,154,0.10), rgba(200,184,154,0.04));
+  border: 0.5px solid rgba(200,184,154,0.28);
+  border-radius: var(--r);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.05s forwards;
+}
+.next-step-notice-text {
+  font-size: 0.95rem;
+  color: rgba(240,237,232,0.9);
+  line-height: 1.5;
+  flex: 1;
+  min-width: 200px;
+}
+.next-step-notice-text strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+.next-step-notice .btn-to-questionnaire {
+  background: var(--accent);
+  color: #1a1610;
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--r);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.next-step-notice .btn-to-questionnaire:hover {
+  background: #d9cbb0;
+  transform: translateY(-1px);
+}
+.next-step-notice .btn-to-questionnaire:active {
+  transform: translateY(0);
+}
+
+/* bottom next-step button (for users who scroll through full result) */
+.btn-to-questionnaire-bottom {
+  display: block;
+  margin: 0 auto 1.5rem;
+  background: var(--accent);
+  color: #1a1610;
+  border: none;
+  padding: 14px 40px;
+  border-radius: var(--r);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.9s forwards;
+}
+.btn-to-questionnaire-bottom:hover {
+  background: #d9cbb0;
+  transform: translateY(-1px);
+}
+
+.completion-report {
+  margin: 0 0 2rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.9s forwards;
+}
+
+.completion-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.completion-stat {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--r);
+  padding: 0.8rem 1rem;
+}
+
+.completion-stat-label {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.completion-stat-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.completion-table-wrap {
+  max-height: 360px;
+  overflow: auto;
+  border: 0.5px solid var(--border);
+  border-radius: var(--r);
+  background: var(--surface);
+}
+
+.completion-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.completion-table th,
+.completion-table td {
+  padding: 10px 12px;
+  border-bottom: 0.5px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.completion-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface2);
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.completion-table tr:last-child td { border-bottom: none; }
+.completion-table .answer-cell { min-width: 160px; color: rgba(240,237,232,0.82); }
+.completion-table .question-cell { min-width: 240px; color: var(--muted); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  .dim-bars { grid-template-columns: 1fr; }
+  .completion-summary { grid-template-columns: 1fr; }
+  .persona-analysis-grid { grid-template-columns: 1fr; }
+  .mode-row { grid-template-columns: 1fr; }
+  .quiz-header { padding: 12px 1rem; }
+  .quiz-body { padding: 2rem 1rem 5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ INTRO ══ -->
+<div id="screen-intro" class="screen active">
+  <div class="intro-glow"></div>
+  <div class="intro-inner">
+    <div class="intro-label">Privacy MBTI · Privacy Personality Test</div>
+    <h1 class="intro-title">How do you <em>think about and protect</em> your privacy?</h1>
+    <p class="intro-subtitle">Enter your participant details, then complete the personality test (35 questions) and your assigned questionnaire (23 tasks).</p>
+    <div class="participant-form">
+      <div class="form-field">
+        <label for="participant-number">Participant number</label>
+        <input id="participant-number" type="number" min="1" max="53" step="1" placeholder="1-53" inputmode="numeric" autocomplete="off">
+      </div>
+      <div class="form-field">
+        <label for="participant-name">Name</label>
+        <input id="participant-name" type="text" placeholder="Enter your name" autocomplete="name">
+      </div>
+      <div class="form-error" id="participant-error" aria-live="polite"></div>
+    </div>
+    <div class="dims-row">
+      <span class="dim-badge v">V · Privacy attitude</span>
+      <span class="dim-badge c">C · Control orientation</span>
+      <span class="dim-badge u">U · Trade-off orientation</span>
+      <span class="dim-badge l">L · Understanding</span>
+    </div>
+    <p class="intro-meta">About 15 minutes · No right or wrong answers · Results are for reference only</p>
+    <p class="intro-consent">Thank you for taking part in this study. We aim to evaluate whether large language models (LLMs) can simulate the choices people make in different situations based on their personality traits. You will complete a 35-question personality test and 23 tasks. The data you provide will be used only for academic research and anonymized after collection so that it contains no personally identifiable information. Participation is entirely voluntary. You may withdraw at any time without giving a reason or facing any negative consequences. By clicking "Start test", you confirm that you have read and understood this information and voluntarily agree to participate.</p>
+    <button class="btn-primary" onclick="startQuiz()">Start test</button>
+  </div>
+</div>
+
+<!-- ══ QUIZ ══ -->
+<div id="screen-quiz" class="screen">
+  <div class="quiz-header">
+    <div class="quiz-logo">PRIVACY MBTI</div>
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+    <div class="progress-label" id="progress-label">0 / 0</div>
+  </div>
+  <div class="quiz-body">
+    <div class="question-card" id="question-card"></div>
+  </div>
+  <div class="quiz-nav">
+    <button class="btn-nav btn-back" onclick="prevQuestion()">← Back</button>
+    <button class="btn-nav btn-next" id="btn-next" onclick="nextQuestion()" disabled="">Continue →</button>
+  </div>
+</div>
+
+<!-- ══ LOADING ══ -->
+<div id="screen-loading" class="screen">
+  <div class="loading-orb"></div>
+  <div class="loading-text"></div>
+</div>
+
+<!-- ══ RESULT ══ -->
+<div id="screen-result" class="screen">
+  <div class="result-inner" id="result-inner"></div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+// DATA - Questions
+// -------------------------------------------
+let QUESTIONS = [];
+let questionDataLoaded = false;
+let loadedQuestionsUrl = null;
+const QUESTIONS_URL = 'questions_35.json';
+let questionsLoadToken = 0;
+
+async function loadQuestions(requestedUrl = QUESTIONS_URL, loadToken = questionsLoadToken) {
+  if (questionDataLoaded && QUESTIONS.length && loadedQuestionsUrl === requestedUrl) return QUESTIONS;
+  const response = await fetch(requestedUrl, { cache: 'no-store' });
+  if (!response.ok) throw new Error('Failed to load ' + requestedUrl + ': ' + response.status);
+  const data = await response.json();
+  if (loadToken !== questionsLoadToken || requestedUrl !== QUESTIONS_URL) return QUESTIONS;
+  QUESTIONS = Array.isArray(data) ? data : data.questions;
+  if (!Array.isArray(QUESTIONS) || QUESTIONS.length === 0) {
+    throw new Error(requestedUrl + ' does not contain a non-empty questions array');
+  }
+  questionDataLoaded = true;
+  loadedQuestionsUrl = requestedUrl;
+  return QUESTIONS;
+}
+
+// DATA — Personas
+// ═══════════════════════════════════════════
+const PERSONAS = {
+  "DSUL": { animal:"🐠", name:"The Drifter", desc:"You have little concern about privacy and rarely manage it actively. With limited privacy knowledge, you put convenience first, accept what platforms tell you, and give little thought to granting permissions.", color: "#888780" },
+  "DSUH": { animal:"🐬", name:"The Trusting Expert", desc:"You understand privacy, trust platforms, and enjoy convenience. Aware of the risks, you consciously choose to trust: a rational optimist.", color: "#BA7517" },
+  "DSPL": { animal:"🐇", name:"The Reluctant Sharer", desc:"You instinctively resist sharing personal information and lean toward protecting privacy. With limited systematic knowledge, you rely on default settings rather than actively configuring them.", color: "#D85A30" },
+  "DSPH": { animal:"🦢", name:"The Informed Bystander", desc:"You know a great deal about privacy but consciously choose to trust institutions and platforms. You understand the risks and make an informed decision to delegate control.", color: "#854F0B" },
+  "DAUL": { animal:"🦝", name:"The Happy-Go-Lucky", desc:"You enjoy adjusting settings, driven more by curiosity than privacy concerns. Your knowledge is limited, and your actions tend to be occasional rather than systematic.", color: "#1D9E75" },
+  "DAUH": { animal:"🦊", name:"The Pragmatist", desc:"You are knowledgeable and actively manage settings while seeking efficiency and convenience. You know where to compromise and where to stand firm: a practical, rational approach to privacy.", color: "#639922" },
+  "DAPL": { animal:"🦔", name:"The Eager Protector", desc:"You instinctively want to protect yourself and are willing to make the effort. Gaps in your knowledge can lead you in the wrong direction, leaving you open to misleading advice or overreaction.", color: "#993C1D" },
+  "DAPH": { animal:"🐢", name:"The Digital Minimalist", desc:"You systematically manage your digital footprint, drawing on solid knowledge and organized habits. You maintain a measured level of trust in platforms and take a disciplined approach to privacy.", color: "#0F6E56" },
+  "VSUL": { animal:"🦌", name:"The Anxious Sleepwalker", desc:"You are highly concerned about privacy but lack the knowledge and initiative to act. You move between worry and helplessness, and convenience often wins out.", color: "#7F77DD" },
+  "VSUH": { animal:"🦉", name:"The Cynical Spectator", desc:"You understand the privacy landscape and remain wary of platforms, yet convenience can create a gap between what you know and what you do: a classic example of the privacy paradox.", color: "#534AB7" },
+  "VSPL": { animal:"🦦", name:"The Frightened Novice", desc:"You strongly distrust external systems and dislike being tracked. You respond by avoiding them rather than managing privacy, and limited knowledge leaves your protection fragmented.", color: "#3C3489" },
+  "VSPH": { animal:"🦅", name:"The Sentinel", desc:"You are knowledgeable, highly concerned, and put privacy first. You protect yourself through non-use, withholding permissions, and opting out: a deliberate form of digital minimalism.", color: "#26215C" },
+  "VAUL": { animal:"🐺", name:"The Overcautious Blunderer", desc:"You are highly concerned and quick to act, but limited knowledge can direct your efforts toward the wrong problems. You may spend considerable effort on protection that achieves little.", color: "#412402" },
+  "VAUH": { animal:"🐆", name:"The Burned Idealist", desc:"You deeply understand the privacy landscape and use that knowledge to guide your actions. You strategically retain some conveniences while carefully weighing the cost of each exchange of data.", color: "#7F77DD" },
+  "VAPL": { animal:"🦁", name:"The Privacy Warrior", desc:"Strong concerns drive you to take frequent action and remain wary of external systems. Gaps in your knowledge can sometimes make your protective measures excessive or misdirected.", color: "#993556" },
+  "VAPH": { animal:"🐉", name:"The Architect", desc:"You combine strong privacy concerns, comprehensive knowledge, proactive action, and a clear preference for privacy. You seek full control over your digital identity, representing the most comprehensive privacy-protection profile.", color: "#534AB7" }
+};
+
+const PERSONA_TRAIT_TEMPLATE = {
+  five_person_traits: {
+    openness: null,
+    conscientiousness: null,
+    extraversion: null,
+    agreeableness: null,
+    neuroticism: null
+  },
+  attitudes_and_perceptions: {
+    privacy_concern: null,
+    data_concerns: null,
+    online_trust: null,
+    home_network_trust: null,
+    threat_source: null,
+    view_of_others_awareness: null,
+    privacy_protection_actions: null,
+    security_vs_convenience: null,
+    social_vs_privacy: null,
+    attitudes_toward_being_monitored: null,
+    data_collecting_entity_trust: null
+  },
+  knowledge_and_learning: {
+    knowledge_of_security_privacy_concepts: null,
+    sources_of_security_knowledge: [],
+    types_of_perceived_threats: []
+  },
+  behaviors_and_practices: {
+    daily_online_hours: null,
+    completeness_of_fallback_authentication: null,
+    ability_to_help_others: null,
+    behavior_changes: null,
+    initiative_on_reviewing_policies: null,
+    proactive_or_reactive: null,
+    number_of_passwords: null,
+    tendency_to_censor_information: null,
+    social_networking_use: null,
+    system_protection: [],
+    tendency_to_adjust_website_settings: null,
+    password_layer: null,
+    recording_passwords: null
+  }
+};
+
+function createEmptyPersonaTraits() {
+  return JSON.parse(JSON.stringify(PERSONA_TRAIT_TEMPLATE));
+}
+
+function mergePersonaTraits(base, updates) {
+  const merged = createEmptyPersonaTraits();
+  for (const [section, traits] of Object.entries(base || {})) {
+    if (!merged[section]) merged[section] = {};
+    for (const [trait, value] of Object.entries(traits || {})) {
+      merged[section][trait] = Array.isArray(value) ? [...value] : value;
+    }
+  }
+  for (const [section, traits] of Object.entries(updates || {})) {
+    if (!merged[section]) merged[section] = {};
+    for (const [trait, value] of Object.entries(traits || {})) {
+      merged[section][trait] = Array.isArray(value) ? [...value] : value;
+    }
+  }
+  return merged;
+}
+
+// ═══════════════════════════════════════════
+// SCORING
+// ═══════════════════════════════════════════
+const LEVEL_MAP = { low:0.0, moderate:0.5, high:1.0 };
+const TIME_MAP = {"<1":0,"1-3":0.25,"3-6":0.5,"6-9":0.75,">9":1.0};
+const NUM_PW_MAP = {"1-3":0,"4-6":0.5,">6":1.0};
+const PW_LAYER_MAP = {weak:0,"multi-level":0.5,strong:1.0};
+const RECORD_PW_MAP = {"not recorded":1.0,"recorded insecurely":0.0,"recorded securely":0.5};
+const PROACTIVE_MAP = {proactive:1.0,neutral:0.5,reactive:0.0};
+const THREAT_SOURCE_MAP = {"primarily external":1.0,"both internal and external":0.5,"primarily internal":0.0};
+const SEC_CONV_MAP = {"prioritize convenience":0.0,"neutral":0.5,"prioritize security":1.0};
+const SOC_PRIV_MAP = {"prioritize social":0.0,"neutral":0.5,"prioritize privacy":1.0};
+const VIEW_MAP = {"lower than mine":0.0,"the same as mine":0.5,"higher than mine":1.0};
+const PRIV_ACT_MAP = {"no need":0.0,"some need":0.5,"strong need":1.0};
+const ATT_MON_MAP = {unconcerned:0.0,"somewhat concerned":0.5,"highly concerned":1.0};
+const BEH_CHG_MAP = {none:0.0,some:0.5,significant:1.0};
+
+const DIMENSION_TRAITS = {
+  V: [
+    ["five_person_traits","openness",-1],
+    ["five_person_traits","extraversion",-1],
+    ["five_person_traits","agreeableness",-1],
+    ["five_person_traits","neuroticism",+1],
+    ["five_person_traits","conscientiousness",+1],
+    ["attitudes_and_perceptions","privacy_concern",+2],
+    ["attitudes_and_perceptions","data_concerns",+2],
+    ["attitudes_and_perceptions","online_trust",-2],
+    ["attitudes_and_perceptions","data_collecting_entity_trust",-2],
+    ["attitudes_and_perceptions","home_network_trust",-2],
+    ["attitudes_and_perceptions","threat_source",+2],
+    ["attitudes_and_perceptions","view_of_others_awareness",-1],
+    ["attitudes_and_perceptions","privacy_protection_actions",+1],
+    ["attitudes_and_perceptions","attitudes_toward_being_monitored",+1],
+    ["attitudes_and_perceptions","security_vs_convenience",+1],
+    ["attitudes_and_perceptions","social_vs_privacy",+1],
+    ["knowledge_and_learning","knowledge_of_security_privacy_concepts",+1],
+    ["behaviors_and_practices","initiative_on_reviewing_policies",+1],
+    ["behaviors_and_practices","tendency_to_adjust_website_settings",+1],
+    ["behaviors_and_practices","tendency_to_censor_information",+1],
+    ["behaviors_and_practices","system_protection",+1],
+  ],
+  C: [
+    ["five_person_traits","openness",+1],
+    ["five_person_traits","conscientiousness",+2],
+    ["five_person_traits","agreeableness",-1],
+    ["attitudes_and_perceptions","privacy_protection_actions",+1],
+    ["attitudes_and_perceptions","attitudes_toward_being_monitored",+2],
+    ["behaviors_and_practices","ability_to_help_others",+1],
+    ["behaviors_and_practices","behavior_changes",+2],
+    ["behaviors_and_practices","initiative_on_reviewing_policies",+2],
+    ["behaviors_and_practices","proactive_or_reactive",+2],
+    ["behaviors_and_practices","tendency_to_adjust_website_settings",+2],
+    ["behaviors_and_practices","password_layer",+1],
+    ["behaviors_and_practices","completeness_of_fallback_authentication",+2],
+    ["behaviors_and_practices","system_protection",+2],
+  ],
+  U: [
+    ["five_person_traits","extraversion",-2],
+    ["five_person_traits","agreeableness",-1],
+    ["five_person_traits","neuroticism",+1],
+    ["five_person_traits","conscientiousness",+1],
+    ["attitudes_and_perceptions","privacy_concern",+1],
+    ["attitudes_and_perceptions","data_concerns",+1],
+    ["attitudes_and_perceptions","online_trust",-1],
+    ["attitudes_and_perceptions","data_collecting_entity_trust",-1],
+    ["attitudes_and_perceptions","privacy_protection_actions",+2],
+    ["attitudes_and_perceptions","attitudes_toward_being_monitored",+1],
+    ["attitudes_and_perceptions","security_vs_convenience",+2],
+    ["attitudes_and_perceptions","social_vs_privacy",+2],
+    ["behaviors_and_practices","daily_online_hours",-1],
+    ["behaviors_and_practices","social_networking_use",-2],
+    ["behaviors_and_practices","behavior_changes",+1],
+    ["behaviors_and_practices","tendency_to_censor_information",+2],
+    ["behaviors_and_practices","completeness_of_fallback_authentication",+1],
+    ["behaviors_and_practices","password_layer",+2],  // note: dir=-1 in xlsx but weight in py is +2, xlsx dir handled below
+    ["behaviors_and_practices","number_of_passwords",+1],
+    ["behaviors_and_practices","recording_passwords",+1],
+  ],
+  L: [
+    ["attitudes_and_perceptions","view_of_others_awareness",+1],
+    ["knowledge_and_learning","knowledge_of_security_privacy_concepts",+2],
+    ["knowledge_and_learning","sources_of_security_knowledge",+2],
+    ["knowledge_and_learning","types_of_perceived_threats",+2],
+    ["behaviors_and_practices","ability_to_help_others",+2],
+    ["behaviors_and_practices","initiative_on_reviewing_policies",+1],
+    ["behaviors_and_practices","proactive_or_reactive",+1],
+    ["behaviors_and_practices","tendency_to_adjust_website_settings",+1],
+  ]
+};
+
+function mapTraitValue(key, value) {
+  if (value === null || value === undefined) return NaN;
+  if (typeof value === 'number') {
+    if (key === "sources_of_security_knowledge") {
+      if (value === 0) return 0.0;
+      if (value >= 1 && value <= 3) return 0.5;
+      if (value >= 4) return 1.0;
+      return NaN;
+    }
+    if (key === "types_of_perceived_threats") {
+      if (value === 0) return 0.0;
+      if (value >= 1 && value <= 3) return 0.5;
+      if (value >= 4) return 1.0;
+      return NaN;
+    }
+    if (key === "system_protection") {
+      if (value === 0) return 0.0;
+      if (value >= 1 && value <= 2) return 0.5;
+      if (value >= 3) return 1.0;
+      return NaN;
+    }
+    if (value >= 0 && value <= 1) return value;
+    return NaN;
+  }
+  const v = String(value).toLowerCase();
+  if (key === "daily_online_hours") return TIME_MAP[v] ?? NaN;
+  if (key === "number_of_passwords") return NUM_PW_MAP[v] ?? NaN;
+  if (key === "password_layer") return PW_LAYER_MAP[v] ?? NaN;
+  if (key === "recording_passwords") return RECORD_PW_MAP[v] ?? NaN;
+  if (key === "proactive_or_reactive") return PROACTIVE_MAP[v] ?? NaN;
+  if (key === "threat_source") return THREAT_SOURCE_MAP[v] ?? NaN;
+  if (key === "security_vs_convenience") return SEC_CONV_MAP[v] ?? NaN;
+  if (key === "social_vs_privacy") return SOC_PRIV_MAP[v] ?? NaN;
+  if (key === "view_of_others_awareness") return VIEW_MAP[v] ?? NaN;
+  if (key === "privacy_protection_actions") return PRIV_ACT_MAP[v] ?? NaN;
+  if (key === "attitudes_toward_being_monitored") return ATT_MON_MAP[v] ?? NaN;
+  if (key === "behavior_changes") return BEH_CHG_MAP[v] ?? NaN;
+  if (key === "social_networking_use") return LEVEL_MAP[v] ?? NaN;
+  if (key === "ability_to_help_others") return LEVEL_MAP[v] ?? NaN;
+  if (key === "initiative_on_reviewing_policies") return LEVEL_MAP[v] ?? NaN;
+  if (key === "tendency_to_adjust_website_settings") return LEVEL_MAP[v] ?? NaN;
+  if (key === "tendency_to_censor_information") return LEVEL_MAP[v] ?? NaN;
+  if (key === "completeness_of_fallback_authentication") return LEVEL_MAP[v] ?? NaN;
+  if (key === "knowledge_of_security_privacy_concepts") return LEVEL_MAP[v] ?? NaN;
+  return LEVEL_MAP[v] ?? NaN;
+}
+
+function computeScores(traits) {
+  const scores = {};
+  for (const [dim, mappings] of Object.entries(DIMENSION_TRAITS)) {
+    let wsum = 0, wtotal = 0;
+    for (const [section, key, weight] of mappings) {
+      const raw = traits[section]?.[key];
+      let val = mapTraitValue(key, raw);
+      if (isNaN(val)) continue;
+      const w = Math.abs(weight);
+      if (weight < 0) val = 1 - val;
+      wsum += val * w;
+      wtotal += w;
+    }
+    scores[dim] = wtotal > 0 ? wsum / wtotal : 0.5;
+  }
+  return scores;
+}
+
+function scoresToCode(scores) {
+  const v = scores.V >= 0.5 ? "V" : "D";
+  const c = scores.C >= 0.5 ? "A" : "S";
+  const u = scores.U >= 0.5 ? "P" : "U";
+  const l = scores.L >= 0.5 ? "H" : "L";
+  return v + c + u + l;
+}
+
+// Likert → raw 0-1 (direction applied here)
+function likertToRaw(answer, dir) {
+  // answer: 0=Strongly disagree ... 4=Strongly agree
+  const base = answer / 4;
+  return dir < 0 ? 1 - base : base;
+}
+
+// raw → low/moderate/high
+function rawToLevel(raw) {
+  if (raw < 1/3) return "low";
+  if (raw < 2/3) return "moderate";
+  return "high";
+}
+
+// ═══════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════
+let currentQ = 0;
+let answers = {}; // qId -> raw answer
+let traitAccum = {}; // section.trait -> [raw values]
+let quizStartedAt = null;
+let quizCompletedAt = null;
+let answerLog = {}; // qId -> { answeredAt, elapsedMs }
+let participant = { number: null, name: '' };
+let questionnaireItems = [];
+let questionnaireAnswers = {};
+let questionnaireCurrent = 0;
+let questionnaireStartedAt = null;
+let questionnaireCompletedAt = null;
+let questionnaireAnswerLog = {};
+let personaResult = null;
+let quizSaveResult = null;
+let attentionCheckPhase = null; // 'personality' | 'questionnaire' | null
+let attentionCheckAnswer = undefined;
+let feedbackActive = false;
+let feedbackCurrent = 0;
+let feedbackAnswers = {}; // { choice: index, text: string }
+let feedbackFollowUpActive = false; // true = showing follow-up text input
+let attentionCheckLog = []; // [{ phase, answer, passed, answeredAt, elapsedMs }]
+const FEEDBACK_QUESTIONS = [
+  {
+    id: 'feedback-1',
+    text: 'How well do these questions accurately and comprehensively reflect your preferences and decision-making?',
+    options: ['Not at all comprehensive', 'Not very comprehensive', 'Neutral', 'Fairly comprehensive', 'Very comprehensive'],
+    negativeThreshold: 1, // indices 0-1 (first two options) trigger a follow-up
+    followUp: 'If these questions do not accurately and comprehensively reflect your preferences or decision-making, what changes would you suggest?'
+  },
+  {
+    id: 'feedback-2',
+    text: 'Were any questions difficult to understand?',
+    options: ['Many were difficult to understand', 'Some were difficult to understand', 'Neutral', 'Most were easy to understand', 'All were easy to understand'],
+    negativeThreshold: 1,
+    followUp: 'Please describe which questions were difficult to understand and why.'
+  },
+  {
+    id: 'feedback-3',
+    text: 'How accurate do you find the privacy personality results page?',
+    options: ['Not at all accurate', 'Not very accurate', 'Neutral', 'Fairly accurate', 'Very accurate'],
+    negativeThreshold: 1,
+    followUp: 'If you feel the privacy personality results are not accurate, please explain what could be improved.'
+  }
+];
+let personalityResultShown = false;
+const SAVE_ENDPOINT = window.location.protocol === 'file:'
+  ? 'http://localhost:3000/api/quiz-results'
+  : '/api/quiz-results';
+
+// ═══════════════════════════════════════════
+// UI HELPERS
+// ═══════════════════════════════════════════
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + id).classList.add('active');
+}
+
+async function startQuiz() {
+  const numberInput = document.getElementById('participant-number');
+  const nameInput = document.getElementById('participant-name');
+  const errorEl = document.getElementById('participant-error');
+  const number = Number(numberInput?.value);
+  const name = String(nameInput?.value || '').trim();
+
+  if (!Number.isInteger(number) || number < 1 || number > 53) {
+    if (errorEl) errorEl.textContent = 'Please enter a questionnaire number from 1 to 53.';
+    numberInput?.focus();
+    return;
+  }
+  if (!name) {
+    if (errorEl) errorEl.textContent = 'Please enter your name.';
+    nameInput?.focus();
+    return;
+  }
+  if (errorEl) errorEl.textContent = '';
+  participant = { number, name };
+
+  showScreen('quiz');
+  document.querySelector('.quiz-logo').textContent = 'PRIVACY MBTI';
+  const card = document.getElementById('question-card');
+  const requestedQuestionsUrl = QUESTIONS_URL;
+  const loadToken = ++questionsLoadToken;
+  card.innerHTML = `
+    <div class="q-phase">LOADING</div>
+    <div class="q-text">Loading questions…</div>
+  `;
+  document.getElementById('btn-next').disabled = true;
+
+  try {
+    await loadQuestions(requestedQuestionsUrl, loadToken);
+  } catch (err) {
+    card.innerHTML = `
+      <div class="q-phase">LOAD ERROR</div>
+      <div class="q-text">Unable to load ${requestedQuestionsUrl}</div>
+      <div class="q-context">${err.message}</div>
+    `;
+    document.getElementById('progress-label').textContent = '0 / 0';
+    document.getElementById('progress-fill').style.width = '0%';
+    return;
+  }
+
+  if (loadToken !== questionsLoadToken || requestedQuestionsUrl !== QUESTIONS_URL) {
+    return;
+  }
+
+  currentQ = 0;
+  answers = {};
+  traitAccum = {};
+  quizStartedAt = Date.now();
+  quizCompletedAt = null;
+  answerLog = {};
+  questionnaireItems = [];
+  questionnaireAnswers = {};
+  questionnaireCurrent = 0;
+  questionnaireStartedAt = null;
+  questionnaireCompletedAt = null;
+  questionnaireAnswerLog = {};
+  personaResult = null;
+  quizSaveResult = null;
+  attentionCheckPhase = null;
+  attentionCheckAnswer = undefined;
+  feedbackActive = false;
+  feedbackCurrent = 0;
+  feedbackAnswers = {};
+  feedbackFollowUpActive = false;
+  attentionCheckLog = [];
+  personalityResultShown = false;
+  renderQuestion();
+}
+
+function updateProgress() {
+  if (!QUESTIONS.length) {
+    document.getElementById('progress-fill').style.width = '0%';
+    document.getElementById('progress-label').textContent = '0 / 0';
+    return;
+  }
+  const pct = (currentQ / QUESTIONS.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = (currentQ + 1) + ' / ' + QUESTIONS.length;
+}
+
+// ═══════════════════════════════════════════
+// RENDER QUESTION
+// ═══════════════════════════════════════════
+function recordCurrentAnswer() {
+  const q = QUESTIONS[currentQ];
+  if (!q || answers[q.id] === undefined || !quizStartedAt) return;
+  const answeredAt = Date.now();
+  answerLog[q.id] = {
+    answeredAt,
+    elapsedMs: answeredAt - quizStartedAt
+  };
+}
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function toBeijingISO(ms) {
+  if (!ms) return null;
+  // Represent the epoch moment in Beijing time (UTC+8) as ISO 8601
+  const bj = new Date(ms + 8 * 3600 * 1000);
+  return bj.toISOString().replace('Z', '+08:00');
+}
+
+function formatTimestamp(ms) {
+  if (!ms) return '-';
+  return new Date(ms).toLocaleString('en', { hour12: false });
+}
+
+function formatDuration(ms) {
+  if (!Number.isFinite(ms) || ms < 0) return '-';
+  const totalSeconds = Math.round(ms / 1000);
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  if (hours > 0) return `${hours}h ${minutes}m ${seconds}s`;
+  if (minutes > 0) return `${minutes}m ${seconds}s`;
+  return `${seconds}s`;
+}
+
+function getAnswerLabel(q, ans) {
+  if (ans === undefined) return '-';
+  if (q.type === 'likert5') {
+    return q.options?.[ans]?.label ?? ['Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree'][ans] ?? String(ans);
+  }
+  if (q.type === 'scale3' || q.type === 'knowledge') {
+    return q.options?.[ans]?.label ?? String(ans);
+  }
+  if (q.type === 'multi') {
+    if (!Array.isArray(ans) || ans.length === 0) return '-';
+    return ans.map(i => q.options?.[i]?.label ?? String(i)).join('；');
+  }
+  return String(ans);
+}
+
+function buildCompletionReport() {
+  const completedAt = quizCompletedAt || Date.now();
+  const totalMs = quizStartedAt ? completedAt - quizStartedAt : 0;
+  const rows = QUESTIONS.map((q, index) => {
+    const log = answerLog[q.id];
+    return `
+      <tr>
+        <td>${index + 1}</td>
+        <td class="question-cell">${escapeHtml(q.text)}</td>
+        <td class="answer-cell">${escapeHtml(getAnswerLabel(q, answers[q.id]))}</td>
+        <td>${escapeHtml(formatTimestamp(log?.answeredAt))}</td>
+        <td>${escapeHtml(formatDuration(log?.elapsedMs))}</td>
+      </tr>
+    `;
+  }).join('');
+
+  return `
+    <div class="completion-report">
+      <div class="completion-summary">
+        <div class="completion-stat">
+          <span class="completion-stat-label">Start time</span>
+          <span class="completion-stat-value">${escapeHtml(formatTimestamp(quizStartedAt))}</span>
+        </div>
+        <div class="completion-stat">
+          <span class="completion-stat-label">Completion time</span>
+          <span class="completion-stat-value">${escapeHtml(formatTimestamp(completedAt))}</span>
+        </div>
+        <div class="completion-stat">
+          <span class="completion-stat-label">Total time</span>
+          <span class="completion-stat-value">${escapeHtml(formatDuration(totalMs))}</span>
+        </div>
+      </div>
+      <div class="completion-table-wrap">
+        <table class="completion-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Question</th>
+              <th>Selected answer</th>
+              <th>Completion time</th>
+              <th>Elapsed time</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+function buildCompletionPayload() {
+  const completedAt = quizCompletedAt || Date.now();
+  const totalMs = quizStartedAt ? completedAt - quizStartedAt : 0;
+  const rows = QUESTIONS.map((q, index) => {
+    const log = answerLog[q.id];
+    return {
+      questionId: q.id,
+      questionNumber: index + 1,
+      section: q.section,
+      trait: q.trait,
+      type: q.type,
+      question: q.text,
+      rawAnswer: answers[q.id],
+      answer: getAnswerLabel(q, answers[q.id]),
+      answeredAt: toBeijingISO(log?.answeredAt),
+      elapsedMs: log?.elapsedMs ?? null
+    };
+  });
+
+  // Compute answers-section timing: first → last personality answer
+  const answerItems = rows.filter(r => r.elapsedMs != null);
+  const answersTotalMs = answerItems.length > 0 ? answerItems[answerItems.length - 1].elapsedMs : 0;
+
+  return {
+    sessionId: `privacy-mbti-${completedAt}-${Math.random().toString(36).slice(2, 10)}`,
+    participant,
+    questionSetUrl: QUESTIONS_URL,
+    startedAt: toBeijingISO(quizStartedAt),
+    completedAt: toBeijingISO(completedAt),
+    totalMs,
+    personaTraits: buildPersonaTraits(),
+    answers: {
+      startedAt: toBeijingISO(quizStartedAt),
+      completedAt: rows.length > 0 ? rows[rows.length - 1].answeredAt : null,
+      totalMs: answersTotalMs,
+      items: rows
+    }
+  };
+}
+
+function getResolvedPersonaTraits(backendResult) {
+  const backendTraits = backendResult?.persona_traits || backendResult?.personaTraits || backendResult?.traits;
+  if (backendTraits) {
+    return mergePersonaTraits(createEmptyPersonaTraits(), backendTraits);
+  }
+  return buildPersonaTraits();
+}
+
+function levelLabel(level) {
+  const labels = {
+    high: 'High',
+    moderate: 'Moderate',
+    low: 'Low'
+  };
+  return labels[level] || 'Unknown';
+}
+
+function arrayPreview(values, fallback = 'None available') {
+  if (!Array.isArray(values) || values.length === 0) return fallback;
+  const preview = values.slice(0, 4).join('、');
+  return values.length > 4 ? `${preview} (${values.length} items total)` : preview;
+}
+
+function buildAnalysisCard(title, lead, bullets) {
+  return `
+    <article class="persona-analysis-card">
+      <h3>${escapeHtml(title)}</h3>
+      <p class="persona-analysis-lead">${escapeHtml(lead)}</p>
+      <ul class="persona-analysis-list">
+        ${bullets.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+      </ul>
+    </article>
+  `;
+}
+
+const DIMENSION_ANALYSIS_COPY = {
+  attitude: {
+    low: {
+      lead: 'You tend to be open and less wary about privacy, and you rarely make privacy risks your main consideration.',
+      bullets: [
+        'You are more likely to accept the default approach or settings offered by a platform.',
+        'Privacy issues are usually not a high priority for you.',
+        'You are less likely to begin by asking whether protection is needed.'
+      ]
+    },
+    high: {
+      lead: 'You are more vigilant about privacy, giving greater priority to data exposure, boundaries, and control.',
+      bullets: [
+        'You scrutinize the default positions taken by platforms more closely.',
+        'You are more likely to establish a clear position on privacy first.',
+        'You usually assess your boundaries before deciding whether to accept.'
+      ]
+    }
+  },
+  behavior: {
+    low: {
+      lead: 'You take a light-touch approach to privacy, with less day-to-day management and fewer actions.',
+      bullets: [
+        'You rarely adjust settings frequently.',
+        'You are less likely to review permissions regularly.',
+        'You tend to continue using the default setup.'
+      ]
+    },
+    high: {
+      lead: 'You take a proactive approach to privacy, with clear actions to manage it.',
+      bullets: [
+        'You actively check and adjust settings.',
+        'You are accustomed to managing privacy boundaries.',
+        'You turn protection into practical, everyday actions.'
+      ]
+    }
+  },
+  tradeoff: {
+    low: {
+      lead: 'You tend to prioritize convenience, putting ease of use, efficiency, and minimal friction ahead of privacy.',
+      bullets: [
+        'You prioritize keeping your experience simple and smooth.',
+        'You are less willing to add extra steps for privacy.',
+        'You often choose the more convenient option first.'
+      ]
+    },
+    high: {
+      lead: 'You tend to prioritize privacy and are willing to give up some convenience to preserve boundaries and control.',
+      bullets: [
+        'You accept some extra effort in exchange for less exposure.',
+        'You are more comfortable with slightly less convenient processes.',
+        'You prioritize options that offer more control, even if they are less convenient.'
+      ]
+    }
+  },
+  knowledge: {
+    low: {
+      lead: 'Your privacy knowledge is fairly basic: you know some general principles but lack a systematic understanding.',
+      bullets: [
+        'You may recognize that a problem exists without knowing the details.',
+        'You are more likely to rely on experience when making judgments.',
+        'You have not yet developed a comprehensive framework of knowledge.'
+      ]
+    },
+    high: {
+      lead: 'You have solid privacy knowledge and can connect risks, mechanisms, and practical responses.',
+      bullets: [
+        'You have a relatively comprehensive understanding of privacy and security.',
+        'You are more likely to recognize where risks arise.',
+        'You use your knowledge to make more accurate judgments.'
+      ]
+    }
+  }
+};
+
+function getDimensionLevelFromCode(code, index, highChar) {
+  const value = code?.[index] || '';
+  return value === highChar ? 'high' : 'low';
+}
+
+function buildPersonaAnalysis(code) {
+  const attitudeLevel = getDimensionLevelFromCode(code, 0, 'V');
+  const behaviorLevel = getDimensionLevelFromCode(code, 1, 'A');
+  const tradeoffLevel = getDimensionLevelFromCode(code, 2, 'P');
+  const knowledgeLevel = getDimensionLevelFromCode(code, 3, 'H');
+
+  const attitudeCopy = DIMENSION_ANALYSIS_COPY.attitude[attitudeLevel];
+  const behaviorCopy = DIMENSION_ANALYSIS_COPY.behavior[behaviorLevel];
+  const tradeoffCopy = DIMENSION_ANALYSIS_COPY.tradeoff[tradeoffLevel];
+  const knowledgeCopy = DIMENSION_ANALYSIS_COPY.knowledge[knowledgeLevel];
+
+  return `
+    <div class="persona-analysis">
+      <div class="persona-analysis-header">
+        <div class="persona-analysis-title">Personality profile analysis</div>
+        <div class="persona-analysis-subtitle">Your results are presented in four parts—attitudes, behaviors, trade-offs, and knowledge—based on your personality type.</div>
+      </div>
+      <div class="persona-analysis-grid">
+        ${buildAnalysisCard('Attitudes', attitudeCopy.lead, attitudeCopy.bullets)}
+        ${buildAnalysisCard('Behaviors', behaviorCopy.lead, behaviorCopy.bullets)}
+        ${buildAnalysisCard('Trade-offs', tradeoffCopy.lead, tradeoffCopy.bullets)}
+        ${buildAnalysisCard('Knowledge', knowledgeCopy.lead, knowledgeCopy.bullets)}
+      </div>
+    </div>
+  `;
+}
+
+async function saveCompletionToLocal(payload) {
+  try {
+    const response = await fetch(SAVE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!response.ok) throw new Error(`Save failed: ${response.status}`);
+    return await response.json();
+  } catch (err) {
+    console.warn('Failed to save quiz result locally. Start the local API server and retry.', err);
+    return null;
+  }
+}
+
+function getQuestionnaireUrl() {
+  return `user_questionnaire/questionnaire_${participant.number}.json`;
+}
+
+async function loadParticipantQuestionnaire() {
+  const url = getQuestionnaireUrl();
+  const response = await fetch(url, { cache: 'no-store' });
+  if (!response.ok) throw new Error('Failed to load ' + url + ': ' + response.status);
+  const data = await response.json();
+  const items = Array.isArray(data) ? data : data.questions;
+  if (!Array.isArray(items) || items.length === 0) {
+    throw new Error(url + ' does not contain a non-empty questionnaire array');
+  }
+  questionnaireItems = items;
+  return questionnaireItems;
+}
+
+function getQuestionnaireItemId(item, index) {
+  const source = item.source || 'questionnaire';
+  const number = item.task_number ?? item.question_number ?? index + 1;
+  const label = item['app name'] || item.construct || item.question || '';
+  return `${source}-${number}-${label}`.replace(/\s+/g, '-').slice(0, 120);
+}
+
+function getQuestionnaireResponseOptions(item) {
+  return Object.entries(item.response_options || {}).map(([value, label]) => ({ value, label }));
+}
+
+function isSettingTask(item) {
+  return Array.isArray(item['available privacy settings']);
+}
+
+function recordCurrentQuestionnaireAnswer() {
+  const item = questionnaireItems[questionnaireCurrent];
+  if (!item || !questionnaireStartedAt) return;
+  const itemId = getQuestionnaireItemId(item, questionnaireCurrent);
+  if (questionnaireAnswers[itemId] === undefined) return;
+  const answeredAt = Date.now();
+  questionnaireAnswerLog[itemId] = {
+    answeredAt,
+    elapsedMs: answeredAt - questionnaireStartedAt
+  };
+}
+
+function isQuestionnaireAnswerComplete(item, answer) {
+  if (isSettingTask(item)) {
+    const settings = item['available privacy settings'] || [];
+    return settings.length > 0 && settings.every(setting => answer?.settings?.[setting.setting_num]);
+  }
+  return answer !== undefined && answer !== null && answer.value !== undefined;
+}
+
+function updateQuestionnaireProgress() {
+  const total = questionnaireItems.length;
+  const pct = total ? (questionnaireCurrent / total) * 100 : 0;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = total ? `${questionnaireCurrent + 1} / ${total}` : '0 / 0';
+}
+
+function renderQuestionnaireItem() {
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  updateQuestionnaireProgress();
+  document.querySelector('.quiz-logo').textContent = `QUESTIONNAIRE ${participant.number}`;
+  const item = questionnaireItems[questionnaireCurrent];
+  const itemId = getQuestionnaireItemId(item, questionnaireCurrent);
+  const answer = questionnaireAnswers[itemId];
+  const card = document.getElementById('question-card');
+  card.style.animation = 'none';
+  card.offsetHeight;
+  card.style.animation = '';
+
+  let html = `
+    <div class="q-num">Questionnaire ${questionnaireCurrent + 1}</div>
+    <div class="q-section-label">${escapeHtml(item.source || 'Questionnaire')}</div>
+  `;
+
+  if (isSettingTask(item)) {
+    html += `
+      <div class="q-text">${escapeHtml(item['app name'] || 'Privacy settings task')}</div>
+      <div class="q-context">Configure the privacy settings for this app according to your personal preferences.</div>
+      ${item['app description'] ? `<div class="q-context">${escapeHtml(item['app description'])}</div>` : ''}
+      <div class="settings-list">
+    `;
+    (item['available privacy settings'] || []).forEach(setting => {
+      html += `
+        <div class="setting-block">
+          <div class="setting-title">${escapeHtml(setting.setting_num)}. ${escapeHtml(setting.setting_name)}</div>
+          <div class="options-list" data-setting-num="${escapeHtml(String(setting.setting_num))}">
+      `;
+      (setting.setting_options || []).forEach((option, optionIndex) => {
+        const selected = answer?.settings?.[setting.setting_num] === option;
+        html += `<button type="button" class="option-btn ${selected ? 'selected' : ''}" data-setting-num="${escapeHtml(String(setting.setting_num))}" data-option-index="${optionIndex}" onclick="selectQuestionnaireSetting(${setting.setting_num}, ${optionIndex})">
+          ${escapeHtml(option)}
+        </button>`;
+      });
+      html += `
+          </div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+  } else {
+    html += `
+      <div class="q-text">${escapeHtml(item.question || 'Question')}</div>
+      ${item.question_type ? `<div class="q-context">${escapeHtml(item.question_type)}</div>` : ''}
+      <div class="options-list">
+    `;
+    getQuestionnaireResponseOptions(item).forEach((option, optionIndex) => {
+      const selected = answer?.value === option.value;
+      html += `<button type="button" class="option-btn ${selected ? 'selected' : ''}" onclick="selectQuestionnaireOption(${optionIndex})">
+        <span class="option-key">${escapeHtml(option.value)}</span>${escapeHtml(option.label)}
+      </button>`;
+    });
+    html += `</div>`;
+  }
+
+  card.innerHTML = html;
+  document.getElementById('btn-next').disabled = !isQuestionnaireAnswerComplete(item, answer);
+}
+
+function renderQuestion() {
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  updateProgress();
+  const q = QUESTIONS[currentQ];
+  const card = document.getElementById('question-card');
+  card.style.animation = 'none';
+  card.offsetHeight;
+  card.style.animation = '';
+
+  let html = `
+    <div class="q-num">Q${currentQ + 1}</div>
+    <div class="q-text">${q.text}</div>
+    ${q.context ? `<div class="q-context">${q.context}</div>` : ''}
+  `;
+
+  if (q.type === 'likert5') {
+    const opts = (q.options || []).map(o => o.label);
+    html += `<div class="options-list">`;
+    opts.forEach((label, i) => {
+      const sel = answers[q.id] === i ? 'selected' : '';
+      html += `<button class="option-btn ${sel}" onclick="selectLikert(${i})">
+        <span class="option-key">${i + 1}</span>${label}
+      </button>`;
+    });
+    html += `</div>`;
+  } else if (q.type === 'scale3' || q.type === 'knowledge') {
+    html += `<div class="options-list">`;
+    const keys = ['A','B','C','D','E','F'];
+    q.options.forEach((opt, i) => {
+      const sel = answers[q.id] === i ? 'selected' : '';
+      html += `<button class="option-btn ${sel}" onclick="selectOption(${i})">
+        <span class="option-key">${keys[i]}</span>${opt.label}
+      </button>`;
+    });
+    html += `</div>`;
+    if (q.type === 'knowledge' && answers[q.id] !== undefined) {
+      const chosen = q.options[answers[q.id]];
+      const correct = chosen.correct;
+      html += `<div class="knowledge-feedback ${correct ? 'correct' : 'wrong'}" style="display:block">
+        ${correct ? '✓ Correct!' : '✗ Not quite.'} ${q.explanation}
+      </div>`;
+    }
+  } else if (q.type === 'multi') {
+    const selected = answers[q.id] || [];
+    html += `<div class="options-list" data-question-id="${q.id}">`;
+    q.options.forEach((opt, i) => {
+      const isSel = selected.includes(i);
+      html += `<button type="button" class="option-btn multi ${isSel ? 'selected' : ''}" data-option-index="${i}" onclick="toggleMulti(${i})">
+        <span class="option-check">${isSel ? '✓' : ''}</span>
+        <span>${opt.label}</span>
+      </button>`;
+    });
+    html += `</div>`;
+  }
+
+  card.innerHTML = html;
+  document.getElementById('btn-next').disabled = answers[q.id] === undefined || (q.type === 'multi' && (!answers[q.id] || answers[q.id].length === 0));
+}
+
+// ═══════════════════════════════════════════
+// INTERACTION
+// ═══════════════════════════════════════════
+function selectLikert(i) {
+  answers[QUESTIONS[currentQ].id] = i;
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach((btn, index) => {
+    btn.classList.toggle('selected', index === i);
+  });
+  document.getElementById('btn-next').disabled = false;
+  setTimeout(() => nextQuestion(), 150);
+}
+
+function selectOption(i) {
+  answers[QUESTIONS[currentQ].id] = i;
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach((btn, index) => {
+    btn.classList.toggle('selected', index === i);
+  });
+  document.getElementById('btn-next').disabled = false;
+  setTimeout(() => nextQuestion(), 150);
+}
+
+function toggleMulti(i) {
+  const q = QUESTIONS[currentQ];
+  if (!answers[q.id]) answers[q.id] = [];
+  const arr = answers[q.id];
+  const noneIdx = q.options.findIndex(o => o.value === q.noneValue);
+  if (i === noneIdx) {
+    answers[q.id] = arr.includes(i) ? [] : [i];
+  } else {
+    const nonePos = arr.indexOf(noneIdx);
+    if (nonePos > -1) arr.splice(nonePos, 1);
+    const pos = arr.indexOf(i);
+    if (pos > -1) arr.splice(pos, 1); else arr.push(i);
+  }
+  syncMultiSelectionUI(q);
+}
+
+function syncMultiSelectionUI(q) {
+  const selected = answers[q.id] || [];
+  const optionButtons = document.querySelectorAll(`.options-list[data-question-id="${q.id}"] .option-btn.multi`);
+  optionButtons.forEach(btn => {
+    const optionIndex = Number(btn.dataset.optionIndex);
+    const isSelected = selected.includes(optionIndex);
+    btn.classList.toggle('selected', isSelected);
+    const check = btn.querySelector('.option-check');
+    if (check) check.textContent = isSelected ? '✓' : '';
+  });
+  document.getElementById('btn-next').disabled = !selected || selected.length === 0;
+}
+
+function selectQuestionnaireOption(optionIndex) {
+  const item = questionnaireItems[questionnaireCurrent];
+  const itemId = getQuestionnaireItemId(item, questionnaireCurrent);
+  const option = getQuestionnaireResponseOptions(item)[optionIndex];
+  questionnaireAnswers[itemId] = {
+    value: option.value,
+    label: option.label
+  };
+
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach((btn, index) => {
+    btn.classList.toggle('selected', index === optionIndex);
+  });
+  document.getElementById('btn-next').disabled = false;
+  setTimeout(() => nextQuestion(), 150);
+}
+
+function selectQuestionnaireSetting(settingNum, optionIndex) {
+  const item = questionnaireItems[questionnaireCurrent];
+  const itemId = getQuestionnaireItemId(item, questionnaireCurrent);
+  const setting = (item['available privacy settings'] || []).find(s => s.setting_num === settingNum);
+  const option = setting?.setting_options?.[optionIndex];
+  if (!setting || !option) return;
+
+  if (!questionnaireAnswers[itemId]) {
+    questionnaireAnswers[itemId] = {
+      appName: item['app name'] || '',
+      taskNumber: item.task_number,
+      settings: {}
+    };
+  }
+  questionnaireAnswers[itemId].settings[settingNum] = option;
+  questionnaireAnswers[itemId].appName = item['app name'] || '';
+  questionnaireAnswers[itemId].taskNumber = item.task_number;
+
+  syncQuestionnaireSettingUI(item, questionnaireAnswers[itemId], settingNum);
+}
+
+function syncQuestionnaireSettingUI(item, answer, settingNum) {
+  const selector = `.options-list[data-setting-num="${String(settingNum)}"] .option-btn`;
+  const setting = (item['available privacy settings'] || []).find(s => s.setting_num === settingNum);
+  const selectedOptionIndex = setting?.setting_options?.indexOf(answer.settings[settingNum]);
+  const btns = document.querySelectorAll(selector);
+  btns.forEach(btn => {
+    btn.classList.toggle('selected', Number(btn.dataset.optionIndex) === selectedOptionIndex);
+  });
+  document.getElementById('btn-next').disabled = !isQuestionnaireAnswerComplete(item, answer);
+}
+
+function nextQuestion() {
+  // ── Personality attention check ──
+  if (attentionCheckPhase === 'personality') {
+    // Record attempt (always allow proceeding, filter later by passed flag)
+    const passed = attentionCheckAnswer === 2;
+    attentionCheckLog.push({
+      phase: 'personality',
+      answer: attentionCheckAnswer,
+      passed,
+      answeredAt: toBeijingISO(Date.now()),
+      elapsedMs: quizStartedAt ? Date.now() - quizStartedAt : null
+    });
+    attentionCheckPhase = null;
+    attentionCheckAnswer = undefined;
+    currentQ++; // advance to Q21 (index 20)
+    renderQuestion();
+    return;
+  }
+
+  // ── Questionnaire attention check ──
+  if (attentionCheckPhase === 'questionnaire') {
+    // Record attempt (always allow proceeding, filter later by passed flag)
+    const passed = attentionCheckAnswer === 0;
+    attentionCheckLog.push({
+      phase: 'questionnaire',
+      answer: attentionCheckAnswer,
+      passed,
+      answeredAt: toBeijingISO(Date.now()),
+      elapsedMs: quizStartedAt ? Date.now() - quizStartedAt : null
+    });
+    attentionCheckPhase = null;
+    attentionCheckAnswer = undefined;
+    questionnaireCurrent++; // advance to Q11 (index 10)
+    renderQuestionnaireItem();
+    return;
+  }
+
+  // ── Feedback phase ──
+  if (feedbackActive) {
+    if (feedbackFollowUpActive) {
+      // Just finished the follow-up text input
+      const q = FEEDBACK_QUESTIONS[feedbackCurrent];
+      const ta = document.getElementById('feedback-textarea');
+      if (!feedbackAnswers[q.id]) {
+        feedbackAnswers[q.id] = { choice: undefined, text: '' };
+      }
+      feedbackAnswers[q.id].text = ta ? ta.value.trim() : '';
+      feedbackFollowUpActive = false;
+
+      if (feedbackCurrent < FEEDBACK_QUESTIONS.length - 1) {
+        feedbackCurrent++;
+        renderFeedbackQuestion();
+      } else {
+        feedbackActive = false;
+        showThankYou();
+      }
+    } else {
+      // Just answered the choice question
+      const q = FEEDBACK_QUESTIONS[feedbackCurrent];
+      const answer = feedbackAnswers[q.id];
+      if (answer && answer.choice !== undefined && answer.choice <= q.negativeThreshold) {
+        // Negative choice (first two options) → show follow-up text input
+        feedbackFollowUpActive = true;
+        renderFeedbackQuestion();
+      } else {
+        // Positive choice → skip to next feedback question
+        if (!answer) {
+          feedbackAnswers[q.id] = { choice: undefined, text: '' };
+        }
+        feedbackAnswers[q.id].text = '';
+
+        if (feedbackCurrent < FEEDBACK_QUESTIONS.length - 1) {
+          feedbackCurrent++;
+          renderFeedbackQuestion();
+        } else {
+          feedbackActive = false;
+          showThankYou();
+        }
+      }
+    }
+    return;
+  }
+
+  // ── Questionnaire flow ──
+  if (questionnaireStartedAt && questionnaireItems.length) {
+    recordCurrentQuestionnaireAnswer();
+    // Insert attention check after Q10 (index 9)
+    if (questionnaireCurrent === 9) {
+      renderQuestionnaireAttentionCheck();
+      return;
+    }
+    if (questionnaireCurrent < questionnaireItems.length - 1) {
+      questionnaireCurrent++;
+      renderQuestionnaireItem();
+    } else {
+      questionnaireCompletedAt = Date.now();
+      startFeedback();
+    }
+    return;
+  }
+
+  // ── Personality test flow ──
+  recordCurrentAnswer();
+  // Insert attention check after Q20 (index 19)
+  if (currentQ === 19) {
+    renderPersonalityAttentionCheck();
+    return;
+  }
+  if (currentQ < QUESTIONS.length - 1) {
+    currentQ++;
+    renderQuestion();
+  } else {
+    quizCompletedAt = Date.now();
+    computeResult();
+  }
+}
+
+// ── Personality attention check (after Q20) ──
+function renderPersonalityAttentionCheck() {
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  attentionCheckPhase = 'personality';
+  attentionCheckAnswer = undefined;
+  document.querySelector('.quiz-logo').textContent = 'PRIVACY MBTI';
+  const card = document.getElementById('question-card');
+  card.style.animation = 'none';
+  card.offsetHeight;
+  card.style.animation = '';
+
+  card.innerHTML = `
+    <div class="q-phase">⚠ Attention check</div>
+    <div class="q-num">Personality test · Checkpoint</div>
+    <div class="q-text">Please select C for this question to show that you are paying attention.</div>
+    <div class="q-context">Read the instructions carefully before answering.</div>
+    <div class="options-list">
+      <button class="option-btn" onclick="selectAttentionCheck(0)">
+        <span class="option-key">A</span>Option A
+      </button>
+      <button class="option-btn" onclick="selectAttentionCheck(1)">
+        <span class="option-key">B</span>Option B
+      </button>
+      <button class="option-btn" onclick="selectAttentionCheck(2)">
+        <span class="option-key">C</span>Option C
+      </button>
+      <button class="option-btn" onclick="selectAttentionCheck(3)">
+        <span class="option-key">D</span>Option D
+      </button>
+    </div>
+    <div id="attention-feedback" class="knowledge-feedback" style="display:none"></div>
+  `;
+  document.getElementById('btn-next').disabled = true;
+  // Keep progress at 20/35 during attention check
+  document.getElementById('progress-fill').style.width = ((currentQ + 1) / QUESTIONS.length * 100) + '%';
+  document.getElementById('progress-label').textContent = (currentQ + 1) + ' / ' + QUESTIONS.length;
+}
+
+// ── Questionnaire attention check (after Q10) ──
+function renderQuestionnaireAttentionCheck() {
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  attentionCheckPhase = 'questionnaire';
+  attentionCheckAnswer = undefined;
+  document.querySelector('.quiz-logo').textContent = 'QUESTIONNAIRE ' + participant.number;
+  const card = document.getElementById('question-card');
+  card.style.animation = 'none';
+  card.offsetHeight;
+  card.style.animation = '';
+
+  card.innerHTML = `
+    <div class="q-phase">⚠ Attention check</div>
+    <div class="q-num">Questionnaire · Checkpoint</div>
+    <div class="q-text">Please select A for this question to show that you are paying attention.</div>
+    <div class="q-context">Read the instructions carefully before answering.</div>
+    <div class="options-list">
+      <button class="option-btn" onclick="selectAttentionCheck(0)">
+        <span class="option-key">A</span>Option A
+      </button>
+      <button class="option-btn" onclick="selectAttentionCheck(1)">
+        <span class="option-key">B</span>Option B
+      </button>
+      <button class="option-btn" onclick="selectAttentionCheck(2)">
+        <span class="option-key">C</span>Option C
+      </button>
+      <button class="option-btn" onclick="selectAttentionCheck(3)">
+        <span class="option-key">D</span>Option D
+      </button>
+    </div>
+    <div id="attention-feedback" class="knowledge-feedback" style="display:none"></div>
+  `;
+  document.getElementById('btn-next').disabled = true;
+  // Keep progress at 10/23 during attention check
+  const total = questionnaireItems.length;
+  document.getElementById('progress-fill').style.width = ((questionnaireCurrent + 1) / total * 100) + '%';
+  document.getElementById('progress-label').textContent = (questionnaireCurrent + 1) + ' / ' + total;
+}
+
+function selectAttentionCheck(index) {
+  attentionCheckAnswer = index;
+  const btns = document.querySelectorAll('#question-card .option-btn');
+  btns.forEach((btn, i) => {
+    btn.classList.toggle('selected', i === index);
+  });
+  document.getElementById('btn-next').disabled = false;
+  const feedback = document.getElementById('attention-feedback');
+  if (feedback) {
+    feedback.style.display = 'none';
+  }
+  setTimeout(() => nextQuestion(), 150);
+}
+
+function prevQuestion() {
+  // ── Feedback phase ──
+  if (feedbackActive) {
+    if (feedbackFollowUpActive) {
+      // Go back from follow-up text to choice question
+      feedbackFollowUpActive = false;
+      renderFeedbackQuestion();
+    } else if (feedbackCurrent > 0) {
+      feedbackCurrent--;
+      feedbackFollowUpActive = false;
+      renderFeedbackQuestion();
+    }
+    return;
+  }
+
+  // ── Questionnaire attention check ──
+  if (attentionCheckPhase === 'questionnaire') {
+    attentionCheckPhase = null;
+    attentionCheckAnswer = undefined;
+    // questionnaireCurrent is still 9 (Q10), re-render it
+    renderQuestionnaireItem();
+    return;
+  }
+
+  // ── Personality attention check ──
+  if (attentionCheckPhase === 'personality') {
+    attentionCheckPhase = null;
+    attentionCheckAnswer = undefined;
+    // currentQ is still 19 (Q20), re-render it
+    renderQuestion();
+    return;
+  }
+
+  if (questionnaireStartedAt && questionnaireItems.length) {
+    if (questionnaireCurrent > 0) {
+      questionnaireCurrent--;
+      renderQuestionnaireItem();
+    }
+    return;
+  }
+  if (currentQ > 0) { currentQ--; renderQuestion(); }
+}
+
+function getQuestionTargets(q) {
+  if (Array.isArray(q.targets) && q.targets.length > 0) return q.targets;
+  return [{ section: q.section, trait: q.trait, dir: q.dir ?? 1, weight: 1 }];
+}
+
+function applyDirection(base, dir) {
+  if (dir < 0) return 1 - base;
+  return base;
+}
+
+function addTraitRaw(traitRaws, target, raw) {
+  if (!Number.isFinite(raw)) return;
+  const key = target.section + '.' + target.trait;
+  if (!traitRaws[key]) traitRaws[key] = { weightedSum: 0, weightTotal: 0 };
+  const weight = Math.abs(target.weight ?? 1);
+  traitRaws[key].weightedSum += raw * weight;
+  traitRaws[key].weightTotal += weight;
+}
+
+function optionIndexRaw(q, ans, target) {
+  if (!Array.isArray(q.options) || q.options.length <= 1) return NaN;
+  return applyDirection(ans / (q.options.length - 1), target.dir ?? q.dir ?? 1);
+}
+
+function multiSelectionRaw(q, ans, target) {
+  if (!Array.isArray(ans) || !Array.isArray(q.options)) return NaN;
+  const selected = ans.map(i => q.options[i]?.value).filter(v => v !== q.noneValue);
+  const hasNone = ans.some(i => q.options[i]?.value === q.noneValue);
+  if (hasNone || selected.length === 0) return 0;
+  const count = selected.length;
+  if (target.trait === 'sources_of_security_knowledge') {
+    return applyDirection(count <= 3 ? 0.5 : 1, target.dir ?? q.dir ?? 1);
+  }
+  if (target.trait === 'types_of_perceived_threats') {
+    return applyDirection(count <= 3 ? 0.5 : 1, target.dir ?? q.dir ?? 1);
+  }
+  if (target.trait === 'system_protection') {
+    return applyDirection(count <= 2 ? 0.5 : 1, target.dir ?? q.dir ?? 1);
+  }
+  const selectableCount = q.options.filter(o => o.value !== q.noneValue).length || q.options.length;
+  const raw = Math.min(1, count / selectableCount);
+  return applyDirection(raw, target.dir ?? q.dir ?? 1);
+}
+
+function buildPersonaTraits() {
+  const personaTraits = createEmptyPersonaTraits();
+  const aggregatedRaws = {};
+
+  const addAggregatedRaw = (section, trait, raw) => {
+    const key = section + '.' + trait;
+    if (!aggregatedRaws[key]) {
+      aggregatedRaws[key] = { weightedSum: 0, weightTotal: 0 };
+    }
+    aggregatedRaws[key].weightedSum += raw;
+    aggregatedRaws[key].weightTotal += 1;
+  };
+
+  QUESTIONS.forEach(q => {
+    const ans = answers[q.id];
+    if (ans === undefined) return;
+    const targets = getQuestionTargets(q);
+
+    targets.forEach(target => {
+      if (q.type === 'likert5') {
+        addAggregatedRaw(target.section, target.trait, likertToRaw(ans, target.dir ?? q.dir ?? 1));
+        return;
+      }
+
+      if (q.type === 'scale3') {
+        const option = q.options?.[ans];
+        if (!option) return;
+        if (target.section === q.section && target.trait === q.trait) {
+          personaTraits[target.section][target.trait] = option.value;
+        } else {
+          addAggregatedRaw(target.section, target.trait, optionIndexRaw(q, ans, target));
+        }
+        return;
+      }
+
+      if (q.type === 'knowledge') {
+        const option = q.options?.[ans];
+        if (!option) return;
+        addAggregatedRaw(target.section, target.trait, option.correct ? 1 : 0);
+        return;
+      }
+
+      if (q.type === 'multi') {
+        const selected = Array.isArray(ans)
+          ? ans.map(i => q.options[i]?.value).filter(v => v !== q.noneValue)
+          : [];
+        const hasNone = Array.isArray(ans)
+          ? ans.some(i => q.options[i]?.value === q.noneValue)
+          : false;
+        if (target.section === q.section && target.trait === q.trait) {
+          personaTraits[target.section][target.trait] = hasNone ? [] : selected;
+        } else {
+          addAggregatedRaw(target.section, target.trait, multiSelectionRaw(q, ans, target));
+        }
+      }
+    });
+  });
+
+  Object.entries(aggregatedRaws).forEach(([key, data]) => {
+    const [section, trait] = key.split('.');
+    const average = data.weightTotal > 0 ? data.weightedSum / data.weightTotal : 0.5;
+    personaTraits[section][trait] = rawToLevel(average);
+  });
+
+  return personaTraits;
+}
+
+// ═══════════════════════════════════════════
+// COMPUTE RESULT
+// ═══════════════════════════════════════════
+function buildQuestionnaireAnswerRows() {
+  return questionnaireItems.map((item, index) => {
+    const itemId = getQuestionnaireItemId(item, index);
+    const answer = questionnaireAnswers[itemId];
+    const log = questionnaireAnswerLog[itemId];
+    const base = {
+      itemId,
+      itemNumber: index + 1,
+      source: item.source || null,
+      taskNumber: item.task_number ?? null,
+      questionNumber: item.question_number ?? null,
+      construct: item.construct ?? null,
+      appName: item['app name'] ?? null,
+      question: item.question ?? item['task instruction'] ?? null,
+      answeredAt: toBeijingISO(log?.answeredAt),
+      elapsedMs: log?.elapsedMs ?? null
+    };
+
+    if (isSettingTask(item)) {
+      const selectedSettings = (item['available privacy settings'] || []).map(setting => ({
+        settingNum: setting.setting_num,
+        settingName: setting.setting_name,
+        selectedOption: answer?.settings?.[setting.setting_num] || null
+      }));
+      return {
+        ...base,
+        type: 'privacy_settings',
+        answer: selectedSettings
+      };
+    }
+
+    return {
+      ...base,
+      type: 'single_choice',
+      answer
+    };
+  });
+}
+
+function buildFinalPayload() {
+  const personalityPayload = buildCompletionPayload();
+  // ── Session-level timing (personality + questionnaire + feedback) ──
+  const sessionEndedAt = questionnaireCompletedAt || Date.now();
+  const sessionTotalMs = quizStartedAt ? sessionEndedAt - quizStartedAt : personalityPayload.totalMs;
+  // ── Questionnaire-only timing ──
+  const qEndedAt = questionnaireCompletedAt || Date.now();
+  const qTotalMs = questionnaireStartedAt ? qEndedAt - questionnaireStartedAt : 0;
+  return {
+    ...personalityPayload,
+    completedAt: toBeijingISO(sessionEndedAt),
+    totalMs: sessionTotalMs,
+    participant,
+    result: personaResult,
+    questionnaire: {
+      number: participant.number,
+      url: getQuestionnaireUrl(),
+      startedAt: toBeijingISO(questionnaireStartedAt),
+      completedAt: toBeijingISO(qEndedAt),
+      totalMs: qTotalMs,
+      answers: buildQuestionnaireAnswerRows()
+    },
+    attentionChecks: attentionCheckLog
+  };
+}
+
+async function completeQuestionnaire() {
+  showScreen('loading');
+  document.querySelector('.loading-text').textContent = 'Saving your completed questionnaire…';
+  const finalPayload = buildFinalPayload();
+  // Include feedback answers
+  finalPayload.feedback = FEEDBACK_QUESTIONS.map((q) => {
+    const ans = feedbackAnswers[q.id] || { choice: undefined, text: '' };
+    return {
+      question: q.text,
+      choice: q.options[ans.choice] || null,
+      choiceIndex: ans.choice,
+      followUpQuestion: ans.choice !== undefined && ans.choice <= q.negativeThreshold ? q.followUp : null,
+      followUpText: ans.text || ''
+    };
+  });
+  await saveCompletionToLocal(finalPayload);
+  const code = personaResult?.code || personaResult?.persona_code || 'DSUL';
+  const scores = personaResult?.scores || { V: 0.5, C: 0.5, U: 0.5, L: 0.5 };
+  const persona = PERSONAS[code] || PERSONAS["DSUL"];
+  const traits = getResolvedPersonaTraits(personaResult);
+  showResult(code, persona, scores, traits, false);
+}
+
+// ── Start feedback questions after questionnaire ──
+function startFeedback() {
+  showScreen('quiz');
+  document.querySelector('.quiz-logo').textContent = 'PRIVACY MBTI · Feedback';
+  feedbackActive = true;
+  feedbackCurrent = 0;
+  feedbackAnswers = {};
+  feedbackFollowUpActive = false;
+  document.getElementById('progress-fill').style.width = '0%';
+  document.getElementById('progress-label').textContent = '1 / ' + FEEDBACK_QUESTIONS.length;
+  renderFeedbackQuestion();
+}
+
+function renderFeedbackQuestion() {
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  const q = FEEDBACK_QUESTIONS[feedbackCurrent];
+  const answer = feedbackAnswers[q.id] || { choice: undefined, text: '' };
+  const card = document.getElementById('question-card');
+  card.style.animation = 'none';
+  card.offsetHeight;
+  card.style.animation = '';
+
+  const progressTotal = FEEDBACK_QUESTIONS.length;
+  document.getElementById('progress-fill').style.width = ((feedbackCurrent + 1) / progressTotal * 100) + '%';
+  document.getElementById('progress-label').textContent = (feedbackCurrent + 1) + ' / ' + progressTotal;
+
+  if (feedbackFollowUpActive) {
+    // ── Follow-up text input ──
+    card.innerHTML = `
+      <div class="q-phase">📝 Feedback · Additional comments</div>
+      <div class="q-num">Feedback ${feedbackCurrent + 1} / ${progressTotal}</div>
+      <div class="q-text">${escapeHtml(q.followUp)}</div>
+      <div class="q-context">Enter your comments here (optional).</div>
+      <div class="form-field" style="margin-top:1rem">
+        <textarea id="feedback-textarea" rows="5" style="width:100%; background:var(--surface); border:0.5px solid var(--border2); border-radius:var(--r); color:var(--text); font:inherit; padding:12px 14px; outline:none; resize:vertical; line-height:1.6;">${escapeHtml(answer.text || '')}</textarea>
+      </div>
+    `;
+    document.getElementById('btn-next').disabled = false;
+    // Focus the textarea
+    setTimeout(() => {
+      const ta = document.getElementById('feedback-textarea');
+      if (ta) ta.focus();
+    }, 100);
+  } else {
+    // ── Likert-5 choice question ──
+    let html = `
+      <div class="q-phase">📝 Feedback</div>
+      <div class="q-num">Feedback ${feedbackCurrent + 1} / ${progressTotal}</div>
+      <div class="q-text">${escapeHtml(q.text)}</div>
+      <div class="options-list">
+    `;
+    q.options.forEach((label, i) => {
+      const sel = answer.choice === i ? 'selected' : '';
+      html += `<button class="option-btn ${sel}" onclick="selectFeedbackOption(${i})">
+        <span class="option-key">${i + 1}</span>${escapeHtml(label)}
+      </button>`;
+    });
+    html += `</div>`;
+
+    card.innerHTML = html;
+    document.getElementById('btn-next').disabled = answer.choice === undefined;
+  }
+}
+
+function selectFeedbackOption(i) {
+  const q = FEEDBACK_QUESTIONS[feedbackCurrent];
+  if (!feedbackAnswers[q.id]) {
+    feedbackAnswers[q.id] = { choice: undefined, text: '' };
+  }
+  feedbackAnswers[q.id].choice = i;
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach((btn, index) => {
+    btn.classList.toggle('selected', index === i);
+  });
+  document.getElementById('btn-next').disabled = false;
+}
+
+// ── Thank you page ──
+function showThankYou() {
+  showScreen('loading');
+  document.querySelector('.loading-text').textContent = 'Saving your feedback…';
+  setTimeout(async () => {
+    const finalPayload = buildFinalPayload();
+    finalPayload.feedback = FEEDBACK_QUESTIONS.map((q) => {
+      const ans = feedbackAnswers[q.id] || { choice: undefined, text: '' };
+      return {
+        question: q.text,
+        choice: q.options[ans.choice] || null,
+        choiceIndex: ans.choice,
+        followUpQuestion: ans.choice !== undefined && ans.choice <= q.negativeThreshold ? q.followUp : null,
+        followUpText: ans.text || ''
+      };
+    });
+    await saveCompletionToLocal(finalPayload);
+
+    showScreen('result');
+    document.getElementById('result-inner').innerHTML = `
+      <div class="result-eyebrow">Thank you</div>
+      <div class="result-animal">🎉</div>
+      <div class="result-name">Thank you for participating!</div>
+      <div class="result-subtitle">Your responses have been saved successfully</div>
+      <div class="result-desc">
+        Thank you for taking the time to complete this privacy personality test and questionnaire.<br>
+        Your feedback will help us improve the accuracy and user experience of our privacy personality assessment.<br><br>
+        If you have any questions or suggestions, please contact the research team.
+      </div>
+      <button class="btn-retry" onclick="startQuiz()">Take the test again</button>
+    `;
+  }, 800);
+}
+
+function computeResult() {
+  if (!quizCompletedAt) quizCompletedAt = Date.now();
+  showScreen('loading');
+  document.querySelector('.loading-text').textContent = 'Analyzing your personality results…';
+  setTimeout(async () => {
+    const completionPayload = buildCompletionPayload();
+    const saved = await saveCompletionToLocal(completionPayload);
+    quizSaveResult = saved;
+    const backendResult = saved?.savedTo?.result || saved?.result || null;
+    const finalCode = backendResult?.persona_code || backendResult?.code || 'DSUL';
+    const finalScores = backendResult?.scores || { V: 0.5, C: 0.5, U: 0.5, L: 0.5 };
+    personaResult = {
+      ...(backendResult || {}),
+      code: finalCode,
+      persona_code: finalCode,
+      personaName: (PERSONAS[finalCode] || PERSONAS["DSUL"]).name,
+      scores: finalScores
+    };
+
+    const persona = PERSONAS[finalCode] || PERSONAS["DSUL"];
+    const traits = getResolvedPersonaTraits(personaResult);
+    personalityResultShown = true;
+    showResult(finalCode, persona, finalScores, traits, true);
+  }, 1800);
+}
+
+// ═══════════════════════════════════════════
+// SHOW RESULT
+// ═══════════════════════════════════════════
+function showResult(code, persona, scores, traits, showNextButton = false) {
+  showScreen('result');
+
+  const dimInfo = [
+    { dim: "V", label: "Privacy attitude", score: scores.V, low: "D · Trusting delegation", high: "V · Vigilant self-management", color: "#e8c4a0" },
+    { dim: "C", label: "Control orientation", score: scores.C, low: "S · Passive acceptance", high: "A · Active control", color: "#a8d4b8" },
+    { dim: "U", label: "Trade-off orientation", score: scores.U, low: "U · Convenience first", high: "P · Privacy first", color: "#f0d090" },
+    { dim: "L", label: "Understanding",   score: scores.L, low: "L · Lower understanding", high: "H · Higher understanding", color: "#a8c4e8" }
+  ];
+
+  const tagStyle = `color:#fff; border-color:${persona.color}40; background:${persona.color}10`;
+
+  const nextStepTopHtml = showNextButton
+    ? `
+    <div class="next-step-notice">
+      <span class="next-step-notice-text">⚠️ <strong>Your test is not complete yet.</strong> Please continue to the <strong>questionnaire</strong> (23 tasks) so that your full responses can be saved.</span>
+      <button class="btn-to-questionnaire" onclick="startQuestionnaireFromResult()">Continue to the questionnaire →</button>
+    </div>`
+    : '';
+
+  const nextStepBottomHtml = showNextButton
+    ? `<button class="btn-to-questionnaire-bottom" onclick="startQuestionnaireFromResult()">Next: Start the questionnaire →</button>`
+    : '';
+
+  document.getElementById('result-inner').innerHTML = `
+    ${nextStepTopHtml}
+    <div class="result-eyebrow">Your privacy personality type</div>
+    <div class="result-animal">${persona.animal}</div>
+    <div class="result-name">${persona.name}</div>
+    <div class="result-desc">${persona.desc}</div>
+    <div class="result-tags">
+      <span class="result-tag" style="${tagStyle}">${scores.V >= 0.5 ? 'V · Concerned' : 'D · Unconcerned'}</span>
+      <span class="result-tag" style="${tagStyle}">${scores.C >= 0.5 ? 'A · Active control' : 'S · Passive control'}</span>
+      <span class="result-tag" style="${tagStyle}">${scores.U >= 0.5 ? 'P · Privacy first' : 'U · Convenience first'}</span>
+      <span class="result-tag" style="${tagStyle}">${scores.L >= 0.5 ? 'H · Higher understanding' : 'L · Lower understanding'}</span>
+    </div>
+    <div class="dim-bars">
+      ${dimInfo.map(d => `
+        <div class="dim-bar-card">
+          <div class="dim-bar-header">
+            <span class="dim-bar-label">${d.dim} · ${d.label}</span>
+            <span class="dim-bar-value" style="color:${d.color}">${Math.round(d.score * 100)}%</span>
+          </div>
+          <div class="dim-bar-track">
+            <div class="dim-bar-fill" id="bar-${d.dim}" style="background:${d.color}; width:0%"></div>
+          </div>
+          <div class="dim-bar-ends">
+            <span>${d.low}</span><span>${d.high}</span>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="result-code">${code}</div>
+    ${buildPersonaAnalysis(code)}
+    ${nextStepBottomHtml}
+    <button class="btn-retry" onclick="startQuiz()">Take the test again</button>
+  `;
+
+  // Animate bars after render
+  setTimeout(() => {
+    dimInfo.forEach(d => {
+      const el = document.getElementById('bar-' + d.dim);
+      if (el) el.style.width = (d.score * 100) + '%';
+    });
+  }, 100);
+}
+
+// ── Start questionnaire from result screen ──
+async function startQuestionnaireFromResult() {
+  showScreen('quiz');
+  const card = document.getElementById('question-card');
+  document.querySelector('.quiz-logo').textContent = 'QUESTIONNAIRE ' + participant.number;
+  card.innerHTML = `
+    <div class="q-phase">LOADING</div>
+    <div class="q-text">Loading questionnaire ${participant.number}…</div>
+  `;
+  document.getElementById('btn-next').disabled = true;
+  document.getElementById('progress-label').textContent = '0 / 0';
+  document.getElementById('progress-fill').style.width = '0%';
+
+  try {
+    await loadParticipantQuestionnaire();
+  } catch (err) {
+    card.innerHTML = `
+      <div class="q-phase">LOAD ERROR</div>
+      <div class="q-text">Unable to load questionnaire ${participant.number}</div>
+      <div class="q-context">${escapeHtml(err.message)}</div>
+    `;
+    return;
+  }
+
+  questionnaireCurrent = 0;
+  questionnaireAnswers = {};
+  questionnaireAnswerLog = {};
+  questionnaireStartedAt = Date.now();
+  questionnaireCompletedAt = null;
+  renderQuestionnaireItem();
+}
+</script>
+
+
+</body></html>

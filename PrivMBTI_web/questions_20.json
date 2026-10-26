@@ -1,0 +1,1014 @@
+{
+  "source": "index.html",
+  "questionCount": 20,
+  "generatedAt": "2026-05-26T08:39:34.333Z",
+  "notes": {
+    "dir": "For likert5 questions, dir=1 means higher agreement increases the trait score; dir=-1 reverses it.",
+    "types": {
+      "likert5": "Five-point agreement scale. Shared options are also copied into each likert5 question.",
+      "scale3": "Single-choice categorical scale. Some questions have more than three options despite this type name.",
+      "knowledge": "Single-choice knowledge question with correct flags and explanation.",
+      "multi": "Multi-select question. noneValue marks the mutually exclusive none option."
+    },
+    "targets": "Each question has one or more scoring targets selected from prompt.py TRAIT_DESCRIPTIONS. dir=1 means higher answer value indicates a higher level of that trait; dir=-1 means reverse; weight expresses relative contribution within the question.",
+    "legacy_fields": "section, trait, and dir are kept as compatibility fields and mirror the first target."
+  },
+  "likert5Options": [
+    {
+      "label": "Strongly disagree",
+      "value": 0
+    },
+    {
+      "label": "Disagree",
+      "value": 1
+    },
+    {
+      "label": "Neutral",
+      "value": 2
+    },
+    {
+      "label": "Agree",
+      "value": 3
+    },
+    {
+      "label": "Strongly agree",
+      "value": 4
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "trait": "openness",
+      "section": "five_person_traits",
+      "dir": 1,
+      "type": "likert5",
+      "text": "I actively try new features introduced by apps or operating systems.",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "five_person_traits",
+          "trait": "openness",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "trait": "agreeableness",
+      "section": "five_person_traits",
+      "dir": 1,
+      "type": "likert5",
+      "text": "When an app requests permission, I usually tap Allow right away so I can continue using it quickly.",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "five_person_traits",
+          "trait": "agreeableness",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "security_vs_convenience",
+          "dir": -1,
+          "weight": 1
+        },
+        {
+          "section": "behaviors_and_practices",
+          "trait": "proactive_or_reactive",
+          "dir": -1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "trait": "neuroticism",
+      "section": "five_person_traits",
+      "dir": 1,
+      "type": "likert5",
+      "text": "When I receive security alerts or privacy notices, I sometimes feel overwhelmed and ignore them rather than deal with them immediately.",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "five_person_traits",
+          "trait": "neuroticism",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "behaviors_and_practices",
+          "trait": "proactive_or_reactive",
+          "dir": -1,
+          "weight": 1
+        },
+        {
+          "section": "behaviors_and_practices",
+          "trait": "behavior_changes",
+          "dir": -1,
+          "weight": 0.5
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "trait": "data_collecting_entity_trust",
+      "section": "attitudes_and_perceptions",
+      "dir": 1,
+      "type": "likert5",
+      "text": "I believe that software companies and website operators will not sell my personal data to third parties without my consent.",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "data_collecting_entity_trust",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "data_concerns",
+          "dir": -1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "online_trust",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "trait": "home_network_trust",
+      "section": "attitudes_and_perceptions",
+      "dir": -1,
+      "type": "likert5",
+      "text": "I believe that home networks are safer than public networks.",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "home_network_trust",
+          "dir": -1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "trait": "tendency_to_adjust_website_settings",
+      "section": "behaviors_and_practices",
+      "dir": 1,
+      "type": "likert5",
+      "text": "To manage my online privacy, I actively reject or disable cookies and other tracking mechanisms on websites.",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "behaviors_and_practices",
+          "trait": "tendency_to_adjust_website_settings",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "privacy_protection_actions",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "behaviors_and_practices",
+          "trait": "proactive_or_reactive",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "attitudes_toward_being_monitored",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "trait": "initiative_on_reviewing_policies",
+      "section": "behaviors_and_practices",
+      "dir": 1,
+      "type": "likert5",
+      "text": "I carefully read the privacy policy before using a product.",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "behaviors_and_practices",
+          "trait": "initiative_on_reviewing_policies",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "privacy_concern",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "five_person_traits",
+          "trait": "conscientiousness",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "trait": "threat_source",
+      "section": "attitudes_and_perceptions",
+      "dir": 1,
+      "type": "likert5",
+      "text": "The biggest privacy risks to my personal data come more from data collectors, such as platforms being hacked or experiencing data breaches, than from my own mistakes.",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "threat_source",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "data_collecting_entity_trust",
+          "dir": -1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "data_concerns",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "trait": "view_of_others_awareness",
+      "section": "attitudes_and_perceptions",
+      "dir": 1,
+      "type": "likert5",
+      "text": "I think that most people around me understand digital privacy risks better than I do.",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "view_of_others_awareness",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "knowledge_and_learning",
+          "trait": "knowledge_of_security_privacy_concepts",
+          "dir": -1,
+          "weight": 1
+        },
+        {
+          "section": "behaviors_and_practices",
+          "trait": "ability_to_help_others",
+          "dir": -1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "trait": "tendency_to_censor_information",
+      "section": "behaviors_and_practices",
+      "dir": 1,
+      "type": "likert5",
+      "text": "When completing online forms or registering accounts, I deliberately avoid providing my real personal information, for example by using an alias, a false phone number, or an unrelated email address.",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "behaviors_and_practices",
+          "trait": "tendency_to_censor_information",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "privacy_concern",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "data_concerns",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "social_vs_privacy",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "trait": "password_layer",
+      "section": "behaviors_and_practices",
+      "dir": 1,
+      "type": "scale3",
+      "text": "When setting a password, you usually prefer to…",
+      "context": "Choose the response that best reflects your actual habits.",
+      "options": [
+        {
+          "label": "Choose a password that is easier to remember, even if it is less secure",
+          "value": "weak"
+        },
+        {
+          "label": "Consider both security and memorability, depending on the situation",
+          "value": "multi-level"
+        },
+        {
+          "label": "Choose a more secure password, even if it is harder to remember",
+          "value": "strong"
+        }
+      ],
+      "targets": [
+        {
+          "section": "behaviors_and_practices",
+          "trait": "password_layer",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "security_vs_convenience",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "trait": "daily_online_hours",
+      "section": "behaviors_and_practices",
+      "dir": 1,
+      "type": "scale3",
+      "text": "On average, how much time do you spend online each day using a phone, tablet, or computer?",
+      "context": "Include social media, web browsing, app use, and similar activities.",
+      "options": [
+        {
+          "label": "Less than 1 hour",
+          "value": "<1"
+        },
+        {
+          "label": "1–3 hours",
+          "value": "1-3"
+        },
+        {
+          "label": "3–6 hours",
+          "value": "3-6"
+        },
+        {
+          "label": "6–9 hours",
+          "value": "6-9"
+        },
+        {
+          "label": "More than 9 hours",
+          "value": ">9"
+        }
+      ],
+      "targets": [
+        {
+          "section": "behaviors_and_practices",
+          "trait": "daily_online_hours",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "trait": "social_networking_use",
+      "section": "behaviors_and_practices",
+      "dir": 1,
+      "type": "scale3",
+      "text": "Overall, how active are you on social media?",
+      "context": "For example, Weibo, WeChat Moments, Facebook, or Instagram.",
+      "options": [
+        {
+          "label": "Rarely active (infrequent use, with little posting or interaction)",
+          "value": "low"
+        },
+        {
+          "label": "Occasionally active (a few times a week, with some interaction)",
+          "value": "moderate"
+        },
+        {
+          "label": "Frequently active (multiple times a day, actively posting and interacting)",
+          "value": "high"
+        }
+      ],
+      "targets": [
+        {
+          "section": "behaviors_and_practices",
+          "trait": "social_networking_use",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "five_person_traits",
+          "trait": "extraversion",
+          "dir": 1,
+          "weight": 1
+        },
+        {
+          "section": "attitudes_and_perceptions",
+          "trait": "social_vs_privacy",
+          "dir": -1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "trait": "knowledge_of_security_privacy_concepts",
+      "section": "knowledge_and_learning",
+      "dir": 1,
+      "type": "likert5",
+      "text": "I believe I have a good understanding of concepts and terminology related to online security and privacy protection.",
+      "context": "Choose the response that best describes you.",
+      "options": [
+        {
+          "label": "Strongly disagree",
+          "value": 0
+        },
+        {
+          "label": "Disagree",
+          "value": 1
+        },
+        {
+          "label": "Neutral",
+          "value": 2
+        },
+        {
+          "label": "Agree",
+          "value": 3
+        },
+        {
+          "label": "Strongly agree",
+          "value": 4
+        }
+      ],
+      "targets": [
+        {
+          "section": "knowledge_and_learning",
+          "trait": "knowledge_of_security_privacy_concepts",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "trait": "sources_of_security_knowledge",
+      "section": "knowledge_and_learning",
+      "dir": 1,
+      "type": "multi",
+      "text": "Where do you usually learn about online security or privacy protection?",
+      "context": "Select all that apply.",
+      "options": [
+        {
+          "label": "Friends or family",
+          "value": "Friends/family"
+        },
+        {
+          "label": "Official documentation or product guides",
+          "value": "Official docs"
+        },
+        {
+          "label": "Technology news outlets",
+          "value": "Tech news"
+        },
+        {
+          "label": "Online articles or blogs",
+          "value": "Online articles"
+        },
+        {
+          "label": "Forums or communities, such as Reddit or V2EX",
+          "value": "Forums"
+        },
+        {
+          "label": "Specialist security blogs, such as Krebs on Security",
+          "value": "Security blogs"
+        },
+        {
+          "label": "Online courses or instructional videos",
+          "value": "Courses"
+        },
+        {
+          "label": "Security certification studies, such as CISSP or CEH",
+          "value": "Certifications"
+        },
+        {
+          "label": "Workplace training",
+          "value": "Company training"
+        },
+        {
+          "label": "Professional training providers",
+          "value": "Professional training"
+        },
+        {
+          "label": "Books",
+          "value": "Books"
+        },
+        {
+          "label": "Academic papers or research reports",
+          "value": "Academic"
+        },
+        {
+          "label": "Personal experiences or security incidents",
+          "value": "Research"
+        },
+        {
+          "label": "Other",
+          "value": "Others"
+        },
+        {
+          "label": "I have never actively learned about these topics",
+          "value": "None"
+        }
+      ],
+      "noneValue": "None",
+      "targets": [
+        {
+          "section": "knowledge_and_learning",
+          "trait": "sources_of_security_knowledge",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "trait": "types_of_perceived_threats",
+      "section": "knowledge_and_learning",
+      "dir": 1,
+      "type": "multi",
+      "text": "What major online security or privacy threats do you think you currently face?",
+      "context": "Select all that apply.",
+      "options": [
+        {
+          "label": "Phishing, such as fraudulent emails or texts impersonating a bank or platform",
+          "value": "Phishing"
+        },
+        {
+          "label": "Data breaches, such as theft of a platform or third-party service database",
+          "value": "Data leak"
+        },
+        {
+          "label": "Unauthorized access, such as compromised accounts or remotely controlled devices",
+          "value": "Unauthorized access"
+        },
+        {
+          "label": "Malware, such as viruses, ransomware, or spyware",
+          "value": "Malware"
+        },
+        {
+          "label": "Other threats, such as social engineering or supply chain attacks",
+          "value": "Others"
+        },
+        {
+          "label": "I do not think I currently face any significant privacy or security threats",
+          "value": "None"
+        }
+      ],
+      "noneValue": "None",
+      "targets": [
+        {
+          "section": "knowledge_and_learning",
+          "trait": "types_of_perceived_threats",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "trait": "system_protection",
+      "section": "behaviors_and_practices",
+      "dir": 1,
+      "type": "multi",
+      "text": "What measures do you take to protect your digital privacy and security?",
+      "context": "Select all that apply.",
+      "options": [
+        {
+          "label": "Use strong passwords and change them regularly",
+          "value": "Strong passwords"
+        },
+        {
+          "label": "Enable two-factor authentication (2FA)",
+          "value": "Two-factor authentication"
+        },
+        {
+          "label": "Regularly update software and operating systems",
+          "value": "Software updates"
+        },
+        {
+          "label": "Use a virtual private network (VPN)",
+          "value": "VPN"
+        },
+        {
+          "label": "Use a firewall",
+          "value": "Firewall"
+        },
+        {
+          "label": "Use antivirus software",
+          "value": "Antivirus"
+        },
+        {
+          "label": "Use incognito mode or clear browsing data",
+          "value": "Privacy mode"
+        },
+        {
+          "label": "Use an intrusion detection system",
+          "value": "Intrusion detection"
+        },
+        {
+          "label": "Other",
+          "value": "Others"
+        }
+      ],
+      "noneValue": "None",
+      "targets": [
+        {
+          "section": "behaviors_and_practices",
+          "trait": "system_protection",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "trait": "completeness_of_fallback_authentication",
+      "section": "behaviors_and_practices",
+      "dir": 1,
+      "type": "scale3",
+      "text": "For important accounts, such as email, banking, or work accounts, have you set up backup authentication methods in addition to a password?",
+      "context": "For example, SMS verification codes, a backup email address, security questions, or an authenticator app.",
+      "options": [
+        {
+          "label": "I have never set up backup authentication (I rely only on passwords)",
+          "value": "low"
+        },
+        {
+          "label": "I have set up backup authentication for some important accounts",
+          "value": "moderate"
+        },
+        {
+          "label": "I have fully configured backup authentication for all important accounts",
+          "value": "high"
+        }
+      ],
+      "targets": [
+        {
+          "section": "behaviors_and_practices",
+          "trait": "completeness_of_fallback_authentication",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "trait": "number_of_passwords",
+      "section": "behaviors_and_practices",
+      "dir": 1,
+      "type": "scale3",
+      "text": "Approximately how many different passwords do you currently use across all your online accounts?",
+      "context": null,
+      "options": [
+        {
+          "label": "1–3 (most accounts use the same or similar passwords)",
+          "value": "1-3"
+        },
+        {
+          "label": "4–6 (some accounts have their own passwords)",
+          "value": "4-6"
+        },
+        {
+          "label": "More than 6 (nearly every account has a unique password)",
+          "value": ">6"
+        }
+      ],
+      "targets": [
+        {
+          "section": "behaviors_and_practices",
+          "trait": "number_of_passwords",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "trait": "recording_passwords",
+      "section": "behaviors_and_practices",
+      "dir": 1,
+      "type": "scale3",
+      "text": "How do you usually record and manage your passwords?",
+      "context": null,
+      "options": [
+        {
+          "label": "I do not record them; I rely entirely on memory",
+          "value": "not recorded"
+        },
+        {
+          "label": "I record them insecurely, such as on handwritten notes or in unencrypted phone notes",
+          "value": "recorded insecurely"
+        },
+        {
+          "label": "I store them securely using a password manager or another encryption tool",
+          "value": "recorded securely"
+        }
+      ],
+      "targets": [
+        {
+          "section": "behaviors_and_practices",
+          "trait": "recording_passwords",
+          "dir": 1,
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "traitCatalogSource": "d:\\privacy\\privacy+persona\\scripts\\ask_LLM\\prompt.py",
+  "traitCatalog": {
+    "five_person_traits": {
+      "openness": "The tendency to be curious, imaginative, and open to new apps and services.",
+      "conscientiousness": "Tendency to regularly check account security settings and manage passwords systematically",
+      "extraversion": "Tendency to share personal information, experiences, and location openly on social platforms",
+      "agreeableness": "Tendency to comply with data collection requests or grant permissions to avoid friction or conflict",
+      "neuroticism": "Tendency to overreact to security alerts or, conversely, to avoid engaging with them due to anxiety"
+    },
+    "attitudes_and_perceptions": {
+      "privacy_concern": "Overall level of concern regarding privacy and security issues",
+      "data_concerns": "The degree of concern about the collection, storage, or misuse of their personal data",
+      "online_trust": "Trust in websites, including the reliability of their information and their handling of personal data",
+      "home_network_trust": "The degree of trust in home Wi-Fi/network security",
+      "data_collecting_entity_trust": "The degree of trust in entities that collect personal data (e.g., apps, platforms, and service providers)",
+      "threat_source": "Perception of whether security threats originate locally or remotely",
+      "view_of_others_awareness": "Perceptions of others’ security awareness",
+      "privacy_protection_actions": "Whether users believe that privacy protection measures or actions are necessary",
+      "attitudes_toward_being_monitored": "Concern about being monitored or tracked, especially regarding the collection and tracking of personal data",
+      "security_vs_convenience": "Preference for security versus convenience, affecting whether you prioritize safety or ease of use in decisions involving personal data",
+      "social_vs_privacy": "Trade-off between social needs and privacy protection"
+    },
+    "knowledge_and_learning": {
+      "knowledge_of_security_privacy_concepts": "Security/privacy knowledge breadth x depth",
+      "sources_of_security_knowledge": "Primary channels through which security knowledge is acquired",
+      "types_of_perceived_threats": "Types of threats the user consciously recognizes as personally relevant"
+    },
+    "behaviors_and_practices": {
+      "daily_online_hours": "Average daily online time across all devices (hours)",
+      "social_networking_use": "Frequency and depth of social networking engagement",
+      "ability_to_help_others": "Demonstrated capacity to diagnose and resolve security/privacy issues for others",
+      "behavior_changes": "Magnitude of behavioral change following a security incident or warning",
+      "initiative_on_reviewing_policies": "Self-initiated frequency of reading privacy policies or ToS before consent",
+      "proactive_or_reactive": "Security posture orientation: proactive (preemptive hardening, hygiene routines) vs. reactive (responds only after incidents or external prompts)",
+      "tendency_to_adjust_website_settings": "Tendency to adjust default website/browser privacy settings",
+      "password_layer": "Diversity of password security levels (weak/strong/multi-level across account sensitivity tiers)",
+      "tendency_to_censor_information": "Tendency to selectively omit, obfuscate, or withhold personal data",
+      "completeness_of_fallback_authentication": "Coverage and robustness of account recovery mechanisms",
+      "system_protection": "Use of system protection tools",
+      "number_of_passwords": "Count of distinct passwords actively in use across accounts",
+      "recording_passwords": "Method and security of password storage"
+    }
+  },
+  "targetedQuestionCount": 20,
+  "targetAuditUpdatedAt": "2026-05-27T00:00:00+08:00"
+}
