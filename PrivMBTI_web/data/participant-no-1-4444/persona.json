@@ -1,0 +1,57 @@
+{
+  "persona_traits": {
+    "five_person_traits": {
+      "openness": "moderate",
+      "conscientiousness": "high",
+      "extraversion": "moderate",
+      "agreeableness": "moderate",
+      "neuroticism": "moderate"
+    },
+    "attitudes_and_perceptions": {
+      "privacy_concern": "moderate",
+      "data_concerns": "moderate",
+      "online_trust": "moderate",
+      "home_network_trust": "low",
+      "threat_source": "primarily internal",
+      "view_of_others_awareness": "the same as mine",
+      "privacy_protection_actions": "strong need",
+      "security_vs_convenience": "neutral",
+      "social_vs_privacy": "prioritize social",
+      "attitudes_toward_being_monitored": "somewhat concerned",
+      "data_collecting_entity_trust": "moderate"
+    },
+    "knowledge_and_learning": {
+      "knowledge_of_security_privacy_concepts": "low",
+      "sources_of_security_knowledge": [
+        "Friends/family",
+        "Official docs",
+        "Tech news"
+      ],
+      "types_of_perceived_threats": [
+        "Unauthorized access",
+        "Data leak"
+      ]
+    },
+    "behaviors_and_practices": {
+      "daily_online_hours": "1-3",
+      "completeness_of_fallback_authentication": "high",
+      "ability_to_help_others": "moderate",
+      "behavior_changes": "some",
+      "initiative_on_reviewing_policies": "high",
+      "proactive_or_reactive": "neutral",
+      "number_of_passwords": "4-6",
+      "tendency_to_censor_information": "low",
+      "social_networking_use": "moderate",
+      "system_protection": [
+        "Firewall",
+        "VPN",
+        "Software updates"
+      ],
+      "tendency_to_adjust_website_settings": "moderate",
+      "password_layer": "strong",
+      "recording_passwords": "not recorded"
+    }
+  },
+  "persona_code": "VAPL",
+  "persona_id": "0f2216d1d0499d8bda8dc63496af73b29034a5c588d20fe8ec4778158dfadfe3"
+}

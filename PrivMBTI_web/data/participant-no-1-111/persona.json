@@ -3,19 +3,19 @@
     "five_person_traits": {
       "openness": "low",
       "conscientiousness": "low",
-      "extraversion": "high",
+      "extraversion": "moderate",
       "agreeableness": "low",
       "neuroticism": "low"
     },
     "attitudes_and_perceptions": {
       "privacy_concern": "low",
-      "data_concerns": "moderate",
+      "data_concerns": "low",
       "online_trust": "low",
-      "home_network_trust": "moderate",
+      "home_network_trust": "high",
       "threat_source": "primarily internal",
       "view_of_others_awareness": "lower than mine",
       "privacy_protection_actions": "no need",
-      "security_vs_convenience": "prioritize security",
+      "security_vs_convenience": "neutral",
       "social_vs_privacy": "prioritize social",
       "attitudes_toward_being_monitored": "unconcerned",
       "data_collecting_entity_trust": "moderate"
@@ -23,31 +23,30 @@
     "knowledge_and_learning": {
       "knowledge_of_security_privacy_concepts": "low",
       "sources_of_security_knowledge": [
-        "Tech news",
-        "Security blogs"
+        "Friends/family"
       ],
       "types_of_perceived_threats": [
-        "Others"
+        "Unauthorized access"
       ]
     },
     "behaviors_and_practices": {
       "daily_online_hours": "1-3",
-      "completeness_of_fallback_authentication": "high",
-      "ability_to_help_others": "high",
+      "completeness_of_fallback_authentication": "moderate",
+      "ability_to_help_others": "moderate",
       "behavior_changes": "some",
-      "initiative_on_reviewing_policies": null,
+      "initiative_on_reviewing_policies": "low",
       "proactive_or_reactive": "neutral",
-      "number_of_passwords": ">6",
+      "number_of_passwords": "1-3",
       "tendency_to_censor_information": "low",
-      "social_networking_use": "high",
+      "social_networking_use": "moderate",
       "system_protection": [
-        "Firewall"
+        "Software updates"
       ],
       "tendency_to_adjust_website_settings": "low",
-      "password_layer": "strong",
-      "recording_passwords": "recorded securely"
+      "password_layer": "multi-level",
+      "recording_passwords": "recorded insecurely"
     }
   },
   "persona_code": "DSUL",
-  "persona_id": "3d3ebd04ce479eed8f9ad9ecee2804f43919870065a2a8a3c1216852b73969d7"
+  "persona_id": "24c00d0ff00aeaea2261e75799d3d6137ede7fc3b8fb5851d5ef67aadb7a793c"
 }

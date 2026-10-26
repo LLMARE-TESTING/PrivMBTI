@@ -72,7 +72,7 @@ body::before {
   pointer-events: none;
 }
 
-.intro-inner { max-width: 560px; }
+.intro-inner { width: 100%; max-width: 1280px; }
 
 .intro-label {
   font-family: 'DM Mono', monospace;
@@ -87,12 +87,14 @@ body::before {
 
 .intro-title {
   font-family: 'Instrument Serif', serif;
-  font-size: clamp(2.8rem, 7.5vw, 5rem);
+  font-size: clamp(2.8rem, 6vw, 5rem);
   line-height: 1.05;
   margin-bottom: 0.5rem;
   opacity: 0;
   animation: fadeUp 0.6s 0.4s forwards;
 }
+
+.intro-title-line { display: block; white-space: nowrap; }
 
 .intro-title em {
   font-style: italic;
@@ -100,9 +102,10 @@ body::before {
 }
 
 .intro-subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   color: var(--muted);
   margin-bottom: 3rem;
+  white-space: nowrap;
   opacity: 0;
   animation: fadeUp 0.6s 0.6s forwards;
 }
@@ -752,9 +755,12 @@ body::before {
 .dim-bar-ends {
   display: flex;
   justify-content: space-between;
-  font-size: 0.9rem;
+  gap: 8px;
+  font-size: clamp(0.65rem, 1.1vw, 0.72rem);
   color: var(--muted);
 }
+
+.dim-bar-ends span { white-space: nowrap; }
 
 .result-tags {
   display: flex;
@@ -946,7 +952,12 @@ body::before {
 }
 
 /* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .intro-subtitle { white-space: normal; }
+}
+
 @media (max-width: 600px) {
+  .intro-title-line { white-space: normal; }
   .dim-bars { grid-template-columns: 1fr; }
   .completion-summary { grid-template-columns: 1fr; }
   .persona-analysis-grid { grid-template-columns: 1fr; }
@@ -963,7 +974,7 @@ body::before {
   <div class="intro-glow"></div>
   <div class="intro-inner">
     <div class="intro-label">Privacy MBTI · Privacy Personality Test</div>
-    <h1 class="intro-title">How do you <em>think about and protect</em> your privacy?</h1>
+    <h1 class="intro-title"><span class="intro-title-line">How do you <em>think about</em></span><span class="intro-title-line"><em>and protect</em> your privacy?</span></h1>
     <p class="intro-subtitle">Enter your participant details, then complete the personality test (35 questions) and your assigned questionnaire (23 tasks).</p>
     <div class="participant-form">
       <div class="form-field">
@@ -2633,10 +2644,10 @@ function showResult(code, persona, scores, traits, showNextButton = false) {
   showScreen('result');
 
   const dimInfo = [
-    { dim: "V", label: "Privacy attitude", score: scores.V, low: "D · Trusting delegation", high: "V · Vigilant self-management", color: "#e8c4a0" },
-    { dim: "C", label: "Control orientation", score: scores.C, low: "S · Passive acceptance", high: "A · Active control", color: "#a8d4b8" },
-    { dim: "U", label: "Trade-off orientation", score: scores.U, low: "U · Convenience first", high: "P · Privacy first", color: "#f0d090" },
-    { dim: "L", label: "Understanding",   score: scores.L, low: "L · Lower understanding", high: "H · Higher understanding", color: "#a8c4e8" }
+    { dim: "V", label: "Privacy attitude", score: scores.V, low: "Delegating", high: "Vigilant", color: "#e8c4a0" },
+    { dim: "C", label: "Control orientation", score: scores.C, low: "Submissive acceptance", high: "Active control", color: "#a8d4b8" },
+    { dim: "U", label: "Trade-off orientation", score: scores.U, low: "Utility first", high: "Privacy first", color: "#f0d090" },
+    { dim: "L", label: "Understanding",   score: scores.L, low: "Lower literacy", high: "Higher literacy", color: "#a8c4e8" }
   ];
 
   const tagStyle = `color:#fff; border-color:${persona.color}40; background:${persona.color}10`;
@@ -2661,9 +2672,9 @@ function showResult(code, persona, scores, traits, showNextButton = false) {
     <div class="result-desc">${persona.desc}</div>
     <div class="result-tags">
       <span class="result-tag" style="${tagStyle}">${scores.V >= 0.5 ? 'V · Concerned' : 'D · Unconcerned'}</span>
-      <span class="result-tag" style="${tagStyle}">${scores.C >= 0.5 ? 'A · Active control' : 'S · Passive control'}</span>
-      <span class="result-tag" style="${tagStyle}">${scores.U >= 0.5 ? 'P · Privacy first' : 'U · Convenience first'}</span>
-      <span class="result-tag" style="${tagStyle}">${scores.L >= 0.5 ? 'H · Higher understanding' : 'L · Lower understanding'}</span>
+      <span class="result-tag" style="${tagStyle}">${scores.C >= 0.5 ? 'A · Active control' : 'S · Submissive control'}</span>
+      <span class="result-tag" style="${tagStyle}">${scores.U >= 0.5 ? 'P · Privacy first' : 'U · Utility first'}</span>
+      <span class="result-tag" style="${tagStyle}">${scores.L >= 0.5 ? 'H · Higher literacy' : 'L · Lower literacy'}</span>
     </div>
     <div class="dim-bars">
       ${dimInfo.map(d => `

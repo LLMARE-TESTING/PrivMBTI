@@ -1,39 +1,39 @@
 {
-  "savedAt": "2026-10-26T18:02:10.990+08:00",
-  "sessionId": "privacy-mbti-1793008929189-5s7io4jo",
+  "savedAt": "2026-10-26T19:25:36.260+08:00",
+  "sessionId": "privacy-mbti-1793013934454-jq0agaa9",
   "participant": {
     "number": 1,
     "name": "111"
   },
-  "startedAt": "2026-10-26T18:01:48.389+08:00",
-  "completedAt": "2026-10-26T18:02:09.189+08:00",
-  "totalMs": 20800,
+  "startedAt": "2026-10-26T19:25:06.413+08:00",
+  "completedAt": "2026-10-26T19:25:34.454+08:00",
+  "totalMs": 28041,
   "result": {
     "code": "DSUL",
     "scores": {
-      "V": 0.36538461538461536,
-      "C": 0.42105263157894735,
-      "U": 0.39814814814814814,
-      "L": 0.4090909090909091
+      "V": 0.2777777777777778,
+      "C": 0.2857142857142857,
+      "U": 0.3055555555555556,
+      "L": 0.2916666666666667
     }
   },
   "personaTraits": {
     "five_person_traits": {
       "openness": "low",
       "conscientiousness": "low",
-      "extraversion": "high",
+      "extraversion": "moderate",
       "agreeableness": "low",
       "neuroticism": "low"
     },
     "attitudes_and_perceptions": {
       "privacy_concern": "low",
-      "data_concerns": "moderate",
+      "data_concerns": "low",
       "online_trust": "low",
-      "home_network_trust": "moderate",
+      "home_network_trust": "high",
       "threat_source": "low",
       "view_of_others_awareness": "low",
       "privacy_protection_actions": "low",
-      "security_vs_convenience": "high",
+      "security_vs_convenience": "moderate",
       "social_vs_privacy": "low",
       "attitudes_toward_being_monitored": "low",
       "data_collecting_entity_trust": "moderate"
@@ -41,38 +41,37 @@
     "knowledge_and_learning": {
       "knowledge_of_security_privacy_concepts": "low",
       "sources_of_security_knowledge": [
-        "Tech news",
-        "Security blogs"
+        "Friends/family"
       ],
       "types_of_perceived_threats": [
-        "Others"
+        "Unauthorized access"
       ]
     },
     "behaviors_and_practices": {
       "daily_online_hours": "1-3",
-      "completeness_of_fallback_authentication": "high",
-      "ability_to_help_others": "high",
+      "completeness_of_fallback_authentication": "moderate",
+      "ability_to_help_others": "moderate",
       "behavior_changes": "moderate",
-      "initiative_on_reviewing_policies": null,
+      "initiative_on_reviewing_policies": "low",
       "proactive_or_reactive": "moderate",
-      "number_of_passwords": ">6",
+      "number_of_passwords": "1-3",
       "tendency_to_censor_information": "low",
-      "social_networking_use": "high",
+      "social_networking_use": "moderate",
       "system_protection": [
-        "Firewall"
+        "Software updates"
       ],
       "tendency_to_adjust_website_settings": "low",
-      "password_layer": "strong",
-      "recording_passwords": "recorded securely"
+      "password_layer": "multi-level",
+      "recording_passwords": "recorded insecurely"
     }
   },
   "questionnaire": null,
   "feedback": null,
   "attentionChecks": null,
   "answers": {
-    "startedAt": "2026-10-26T18:01:48.389+08:00",
-    "completedAt": "2026-10-26T18:02:09.189+08:00",
-    "totalMs": 20800,
+    "startedAt": "2026-10-26T19:25:06.413+08:00",
+    "completedAt": "2026-10-26T19:25:34.454+08:00",
+    "totalMs": 28041,
     "items": [
       {
         "questionNumber": 1,
@@ -80,10 +79,10 @@
         "section": "five_person_traits",
         "trait": "openness",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:50.823+08:00",
-        "elapsedMs": 2434
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:08.704+08:00",
+        "elapsedMs": 2291
       },
       {
         "questionNumber": 2,
@@ -91,10 +90,10 @@
         "section": "five_person_traits",
         "trait": "conscientiousness",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:51.422+08:00",
-        "elapsedMs": 3033
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:09.888+08:00",
+        "elapsedMs": 3475
       },
       {
         "questionNumber": 3,
@@ -102,10 +101,10 @@
         "section": "five_person_traits",
         "trait": "agreeableness",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:51.824+08:00",
-        "elapsedMs": 3435
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:10.470+08:00",
+        "elapsedMs": 4057
       },
       {
         "questionNumber": 4,
@@ -113,10 +112,10 @@
         "section": "five_person_traits",
         "trait": "neuroticism",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:52.189+08:00",
-        "elapsedMs": 3800
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:10.938+08:00",
+        "elapsedMs": 4525
       },
       {
         "questionNumber": 5,
@@ -126,8 +125,8 @@
         "type": "likert5",
         "rawAnswer": 1,
         "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:52.556+08:00",
-        "elapsedMs": 4167
+        "answeredAt": "2026-10-26T19:25:11.438+08:00",
+        "elapsedMs": 5025
       },
       {
         "questionNumber": 6,
@@ -135,10 +134,10 @@
         "section": "attitudes_and_perceptions",
         "trait": "data_collecting_entity_trust",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:52.890+08:00",
-        "elapsedMs": 4501
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:12.004+08:00",
+        "elapsedMs": 5591
       },
       {
         "questionNumber": 7,
@@ -146,10 +145,10 @@
         "section": "attitudes_and_perceptions",
         "trait": "data_concerns",
         "type": "likert5",
-        "rawAnswer": 2,
-        "answerValue": "neutral",
-        "answeredAt": "2026-10-26T18:01:53.374+08:00",
-        "elapsedMs": 4985
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T19:25:12.488+08:00",
+        "elapsedMs": 6075
       },
       {
         "questionNumber": 8,
@@ -157,9 +156,10 @@
         "section": "attitudes_and_perceptions",
         "trait": "attitudes_toward_being_monitored",
         "type": "likert5",
-        "answerValue": "",
-        "answeredAt": null,
-        "elapsedMs": null
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:12.905+08:00",
+        "elapsedMs": 6492
       },
       {
         "questionNumber": 9,
@@ -167,10 +167,10 @@
         "section": "attitudes_and_perceptions",
         "trait": "home_network_trust",
         "type": "likert5",
-        "rawAnswer": 2,
-        "answerValue": "neutral",
-        "answeredAt": "2026-10-26T18:01:53.906+08:00",
-        "elapsedMs": 5517
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T19:25:13.389+08:00",
+        "elapsedMs": 6976
       },
       {
         "questionNumber": 10,
@@ -178,10 +178,10 @@
         "section": "attitudes_and_perceptions",
         "trait": "privacy_protection_actions",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:54.306+08:00",
-        "elapsedMs": 5917
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:13.822+08:00",
+        "elapsedMs": 7409
       },
       {
         "questionNumber": 11,
@@ -189,10 +189,10 @@
         "section": "behaviors_and_practices",
         "trait": "tendency_to_adjust_website_settings",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:54.639+08:00",
-        "elapsedMs": 6250
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:14.305+08:00",
+        "elapsedMs": 7892
       },
       {
         "questionNumber": 12,
@@ -200,10 +200,10 @@
         "section": "behaviors_and_practices",
         "trait": "behavior_changes",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:54.991+08:00",
-        "elapsedMs": 6602
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:14.704+08:00",
+        "elapsedMs": 8291
       },
       {
         "questionNumber": 13,
@@ -211,9 +211,10 @@
         "section": "behaviors_and_practices",
         "trait": "initiative_on_reviewing_policies",
         "type": "likert5",
-        "answerValue": "",
-        "answeredAt": null,
-        "elapsedMs": null
+        "rawAnswer": 1,
+        "answerValue": "disagree",
+        "answeredAt": "2026-10-26T19:25:15.455+08:00",
+        "elapsedMs": 9042
       },
       {
         "questionNumber": 14,
@@ -221,10 +222,10 @@
         "section": "behaviors_and_practices",
         "trait": "proactive_or_reactive",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:55.506+08:00",
-        "elapsedMs": 7117
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:15.722+08:00",
+        "elapsedMs": 9309
       },
       {
         "questionNumber": 15,
@@ -232,10 +233,10 @@
         "section": "attitudes_and_perceptions",
         "trait": "security_vs_convenience",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:55.839+08:00",
-        "elapsedMs": 7450
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:16.122+08:00",
+        "elapsedMs": 9709
       },
       {
         "questionNumber": 16,
@@ -243,10 +244,10 @@
         "section": "attitudes_and_perceptions",
         "trait": "threat_source",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:56.389+08:00",
-        "elapsedMs": 8000
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:17.337+08:00",
+        "elapsedMs": 10924
       },
       {
         "questionNumber": 17,
@@ -256,8 +257,8 @@
         "type": "likert5",
         "rawAnswer": 1,
         "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:56.741+08:00",
-        "elapsedMs": 8352
+        "answeredAt": "2026-10-26T19:25:17.687+08:00",
+        "elapsedMs": 11274
       },
       {
         "questionNumber": 18,
@@ -265,9 +266,10 @@
         "section": "behaviors_and_practices",
         "trait": "ability_to_help_others",
         "type": "likert5",
-        "answerValue": "",
-        "answeredAt": null,
-        "elapsedMs": null
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:18.686+08:00",
+        "elapsedMs": 12273
       },
       {
         "questionNumber": 19,
@@ -275,10 +277,10 @@
         "section": "behaviors_and_practices",
         "trait": "tendency_to_censor_information",
         "type": "likert5",
-        "rawAnswer": 1,
-        "answerValue": "disagree",
-        "answeredAt": "2026-10-26T18:01:57.222+08:00",
-        "elapsedMs": 8833
+        "rawAnswer": 0,
+        "answerValue": "strongly_disagree",
+        "answeredAt": "2026-10-26T19:25:19.770+08:00",
+        "elapsedMs": 13357
       },
       {
         "questionNumber": 20,
@@ -286,10 +288,10 @@
         "section": "behaviors_and_practices",
         "trait": "password_layer",
         "type": "scale3",
-        "rawAnswer": 2,
-        "answerValue": "2",
-        "answeredAt": "2026-10-26T18:01:57.556+08:00",
-        "elapsedMs": 9167
+        "rawAnswer": 1,
+        "answerValue": "1",
+        "answeredAt": "2026-10-26T19:25:20.888+08:00",
+        "elapsedMs": 14475
       },
       {
         "questionNumber": 21,
@@ -299,8 +301,8 @@
         "type": "scale3",
         "rawAnswer": 1,
         "answerValue": "1",
-        "answeredAt": "2026-10-26T18:01:58.356+08:00",
-        "elapsedMs": 9967
+        "answeredAt": "2026-10-26T19:25:22.288+08:00",
+        "elapsedMs": 15875
       },
       {
         "questionNumber": 22,
@@ -308,10 +310,10 @@
         "section": "behaviors_and_practices",
         "trait": "social_networking_use",
         "type": "scale3",
-        "rawAnswer": 2,
-        "answerValue": "2",
-        "answeredAt": "2026-10-26T18:01:58.722+08:00",
-        "elapsedMs": 10333
+        "rawAnswer": 1,
+        "answerValue": "1",
+        "answeredAt": "2026-10-26T19:25:23.270+08:00",
+        "elapsedMs": 16857
       },
       {
         "questionNumber": 23,
@@ -321,8 +323,8 @@
         "type": "knowledge",
         "rawAnswer": 2,
         "answerValue": "2",
-        "answeredAt": "2026-10-26T18:01:59.089+08:00",
-        "elapsedMs": 10700
+        "answeredAt": "2026-10-26T19:25:24.153+08:00",
+        "elapsedMs": 17740
       },
       {
         "questionNumber": 24,
@@ -330,10 +332,10 @@
         "section": "knowledge_and_learning",
         "trait": "knowledge_of_security_privacy_concepts",
         "type": "knowledge",
-        "rawAnswer": 3,
-        "answerValue": "3",
-        "answeredAt": "2026-10-26T18:01:59.439+08:00",
-        "elapsedMs": 11050
+        "rawAnswer": 2,
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T19:25:24.803+08:00",
+        "elapsedMs": 18390
       },
       {
         "questionNumber": 25,
@@ -341,10 +343,10 @@
         "section": "knowledge_and_learning",
         "trait": "knowledge_of_security_privacy_concepts",
         "type": "knowledge",
-        "rawAnswer": 3,
-        "answerValue": "3",
-        "answeredAt": "2026-10-26T18:01:59.805+08:00",
-        "elapsedMs": 11416
+        "rawAnswer": 2,
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T19:25:25.172+08:00",
+        "elapsedMs": 18759
       },
       {
         "questionNumber": 26,
@@ -354,8 +356,8 @@
         "type": "knowledge",
         "rawAnswer": 3,
         "answerValue": "3",
-        "answeredAt": "2026-10-26T18:02:00.139+08:00",
-        "elapsedMs": 11750
+        "answeredAt": "2026-10-26T19:25:25.588+08:00",
+        "elapsedMs": 19175
       },
       {
         "questionNumber": 27,
@@ -363,10 +365,10 @@
         "section": "knowledge_and_learning",
         "trait": "knowledge_of_security_privacy_concepts",
         "type": "knowledge",
-        "rawAnswer": 2,
-        "answerValue": "2",
-        "answeredAt": "2026-10-26T18:02:00.489+08:00",
-        "elapsedMs": 12100
+        "rawAnswer": 0,
+        "answerValue": "0",
+        "answeredAt": "2026-10-26T19:25:26.439+08:00",
+        "elapsedMs": 20026
       },
       {
         "questionNumber": 28,
@@ -374,10 +376,10 @@
         "section": "knowledge_and_learning",
         "trait": "knowledge_of_security_privacy_concepts",
         "type": "knowledge",
-        "rawAnswer": 3,
-        "answerValue": "3",
-        "answeredAt": "2026-10-26T18:02:00.839+08:00",
-        "elapsedMs": 12450
+        "rawAnswer": 1,
+        "answerValue": "1",
+        "answeredAt": "2026-10-26T19:25:27.055+08:00",
+        "elapsedMs": 20642
       },
       {
         "questionNumber": 29,
@@ -385,10 +387,10 @@
         "section": "knowledge_and_learning",
         "trait": "knowledge_of_security_privacy_concepts",
         "type": "knowledge",
-        "rawAnswer": 2,
-        "answerValue": "2",
-        "answeredAt": "2026-10-26T18:02:01.223+08:00",
-        "elapsedMs": 12834
+        "rawAnswer": 1,
+        "answerValue": "1",
+        "answeredAt": "2026-10-26T19:25:27.622+08:00",
+        "elapsedMs": 21209
       },
       {
         "questionNumber": 30,
@@ -397,12 +399,11 @@
         "trait": "sources_of_security_knowledge",
         "type": "multi",
         "rawAnswer": [
-          2,
-          5
+          0
         ],
-        "answerValue": "2;5",
-        "answeredAt": "2026-10-26T18:02:03.359+08:00",
-        "elapsedMs": 14970
+        "answerValue": "0",
+        "answeredAt": "2026-10-26T19:25:29.117+08:00",
+        "elapsedMs": 22704
       },
       {
         "questionNumber": 31,
@@ -411,11 +412,11 @@
         "trait": "types_of_perceived_threats",
         "type": "multi",
         "rawAnswer": [
-          4
+          2
         ],
-        "answerValue": "4",
-        "answeredAt": "2026-10-26T18:02:04.709+08:00",
-        "elapsedMs": 16320
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T19:25:30.450+08:00",
+        "elapsedMs": 24037
       },
       {
         "questionNumber": 32,
@@ -424,11 +425,11 @@
         "trait": "system_protection",
         "type": "multi",
         "rawAnswer": [
-          4
+          2
         ],
-        "answerValue": "4",
-        "answeredAt": "2026-10-26T18:02:06.494+08:00",
-        "elapsedMs": 18105
+        "answerValue": "2",
+        "answeredAt": "2026-10-26T19:25:32.341+08:00",
+        "elapsedMs": 25928
       },
       {
         "questionNumber": 33,
@@ -436,10 +437,10 @@
         "section": "behaviors_and_practices",
         "trait": "completeness_of_fallback_authentication",
         "type": "scale3",
-        "rawAnswer": 2,
-        "answerValue": "2",
-        "answeredAt": "2026-10-26T18:02:07.575+08:00",
-        "elapsedMs": 19186
+        "rawAnswer": 1,
+        "answerValue": "1",
+        "answeredAt": "2026-10-26T19:25:33.153+08:00",
+        "elapsedMs": 26740
       },
       {
         "questionNumber": 34,
@@ -447,10 +448,10 @@
         "section": "behaviors_and_practices",
         "trait": "number_of_passwords",
         "type": "scale3",
-        "rawAnswer": 2,
-        "answerValue": "2",
-        "answeredAt": "2026-10-26T18:02:08.632+08:00",
-        "elapsedMs": 20243
+        "rawAnswer": 0,
+        "answerValue": "0",
+        "answeredAt": "2026-10-26T19:25:34.104+08:00",
+        "elapsedMs": 27691
       },
       {
         "questionNumber": 35,
@@ -458,10 +459,10 @@
         "section": "behaviors_and_practices",
         "trait": "recording_passwords",
         "type": "scale3",
-        "rawAnswer": 2,
-        "answerValue": "2",
-        "answeredAt": "2026-10-26T18:02:09.189+08:00",
-        "elapsedMs": 20800
+        "rawAnswer": 1,
+        "answerValue": "1",
+        "answeredAt": "2026-10-26T19:25:34.454+08:00",
+        "elapsedMs": 28041
       }
     ]
   }

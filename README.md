@@ -67,7 +67,15 @@ Open the following address in a browser:
 http://localhost:3000
 ```
 
+![image-20261026191544137](README.assets/image-20261026191544137.png)
+
 Enter a participant number from **1 to 53** and a name to start the test. The website automatically loads the corresponding follow-up questionnaire and saves submitted results under `PrivMBTI_web/data/`.
+
+After completing the PrivMBTI test questionnaire, you'll discover your privacy personality!
+
+![image-20261026192614673](README.assets/image-20261026192614673.png)
+
+![image-20261026192643682](README.assets/image-20261026192643682.png)
 
 ### Troubleshooting
 
